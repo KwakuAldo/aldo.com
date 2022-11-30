@@ -16,7 +16,6 @@ body {
 }
 
 .header {
-	position: fixed;
 	top: 0px;
 	display: flex;
 	align-items: center;
@@ -77,9 +76,10 @@ main {
 }
 
 .subSection1 {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10rem;
 }
 
 .emailLink {
@@ -95,10 +95,10 @@ main {
 }
 
 .small_intro {
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	align-content: center;
+	align-items: center;
 	justify-content: center
 }
 
@@ -111,7 +111,6 @@ main {
 }
 
 .small_intro p {
-	margin: 40px 0;
 	max-width: 500px;
 }
 
@@ -148,11 +147,13 @@ main {
 	display: flex;
 	flex-direction: row;
 	color: #f9c846;
+	width: 14rem;
+	justify-content: space-between;
 }
 
 
 .socialIcons {
-	width: 20px;
+	width: 2rem;
 	margin: 5px;
 }
 
@@ -264,4 +265,11 @@ main {
 .projectIMGs img {
 	width: 100%;
 	height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.subSection1 {
+		display: flex;
+		flex-direction: column-reverse;
+	}
 }

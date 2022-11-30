@@ -71,15 +71,14 @@ main {
 }
 
 .subSection {
-	margin: 0px auto;
-	padding: 100px 0;
+	margin-top: 15rem;
 }
 
 .subSection1 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 10rem;
+	margin-top: 12rem;
 }
 
 .emailLink {
@@ -175,6 +174,7 @@ main {
 	color: #f9c846;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	width: 100%;
 	margin: 10px 0 40px;
 }

@@ -210,20 +210,23 @@ main {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	width: 80%;
+  height: 80%;
 }
 
 .projects {
 	position: relative;
 	height: 100%;
-	max-height: 230px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
 	-webkit-box-align: center;
 	-webkit-box-pack: justify;
-	padding: 1rem 1rem;
-	max-width: 355px; 
+	padding: 0.5rem 0.5rem; 
+}
+
+.projectIMGs {
+  width: 100%;
 }
 
 #projects {
@@ -282,16 +285,6 @@ main {
 	color: #fff;
 	font-size: 3rem;
 	font-weight: bold;
-}
-
-.projectIMGs {
-	display: flex;
-	
-}
-
-.projectIMGs img {
-	width: 100%;
-	height: 100%;
 }
 
 /** Hover Effects */
@@ -697,6 +690,24 @@ main {
   }
 }
 
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/********** Smaller Screens ****************/
+
 @media screen and (max-width: 768px) {
 	body {
 		width: 100%;
@@ -772,21 +783,54 @@ main {
   }
 }
 
+.subSection {
+  padding: 0;
+}
+
+.projects {
+  display: flex;
+  position: absolute;
+  width: 100%;
+}
+
+.projectGrid {
+  width: 100%;
+  height: 100%;
+}
+
+.projectsIMGs {
+  position: absolute;
+}
+
+.slideShow {
+  position: relative;
+  max-width: ;
+  margin: auto;
+}
+
+.rwd, .fwd {
+  position: absolute;
+  cursor: pointer;
+  top: 225%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.fwd {
+  right: 0;
+  border-radius: 3px 0 0 3px
+}
+
+.fwd:hover, .rwd:hover {
+  background: rgba(0, 0, 0, 0.8);
+} 
 
 }
 
-.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}

@@ -1,5 +1,11 @@
-let slideIndex = 1;
-showSlides(slideIndex)
+// create a media query to check if the screen size is 786px or smaller
+const mq = window.matchMedia("(max-width: 768px)")
+
+// if the media query matches, run the code
+if (mq.matches) {
+    let slideIndex = 1;
+    showSlides(slideIndex)
+
 
 function fwdSlides(n) {
     showSlides(slideIndex += n)
@@ -22,5 +28,6 @@ function showSlides(n) {
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none"
     }
-    slides[slideIndex-1].style.display = "block"
+    slides[slideIndex - 1].style.display = "block"
+}
 }

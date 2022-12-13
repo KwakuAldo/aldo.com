@@ -7,7 +7,7 @@
 body {
 	font-size: 16px;
 	scroll-behavior: smooth;
-	background-color: #120E26;
+	
 	color: #fff;
 	font-family: 'Zen Kurenaido', sans-serif;
 }
@@ -22,6 +22,7 @@ body {
 	width: 100%;
 	height: 90px;
 	padding: 0px 50px;
+  background-color: #120E26;
 }
 
 .nav {
@@ -58,6 +59,7 @@ main {
 	align-items: center;
 	-webkit-box-align: center;
 	overflow: hidden;
+  background-color: #120E26;
 }
 
 .container {
@@ -741,6 +743,22 @@ main {
 		display: none;
 	}
 
+  #myProjects {
+    display: none;
+  }
+
+  #projects {
+    height: 20rem;
+  }
+
+  #project-btn {
+   display: none;
+  }
+
+  #contact {
+    position: relative;
+  }
+
 	.tracking-in-expand {
 	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
@@ -787,15 +805,19 @@ main {
   padding: 0;
 }
 
+.projectGrid {
+  display: flex;
+  width: 100%;
+  height: 12.5rem;
+  position: relative;
+}
+
 .projects {
   display: flex;
   position: absolute;
+  justify-self: center;
+  align-self: center;
   width: 100%;
-}
-
-.projectGrid {
-  width: 100%;
-  height: 100%;
 }
 
 .projectsIMGs {
@@ -811,7 +833,7 @@ main {
 .rwd, .fwd {
   position: absolute;
   cursor: pointer;
-  top: 225%;
+  top: 45%;
   width: auto;
   margin-top: -22px;
   padding: 16px;

@@ -116,6 +116,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+  text-align: center;
 	justify-content: center
 }
 
@@ -231,7 +232,7 @@ main {
   width: 100%;
 }
 
-#projects {
+#works {
 	background-color: #f9c846;
 }
 
@@ -246,8 +247,13 @@ main {
 }
 
 .buttons {
-	display: flex;
-	justify-content: center;
+	position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  color: #f9c846;
+  width: auto;
+  justify-content: space-between;
 	-webkit-box-pack: center;margin: 3rem 0 0 0;
 }
 

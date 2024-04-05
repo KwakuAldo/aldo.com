@@ -23,6 +23,7 @@ body {
 	height: 90px;
 	padding: 0px 50px;
   background-color: #120E26;
+  position: sticky;
 }
 
 .nav {
@@ -238,6 +239,10 @@ main {
 
 #myProjects {
 	color: #120E26;
+}
+
+.rwd, .fwd {
+  display: none;
 }
 
 #project-btn {
@@ -837,6 +842,7 @@ main {
 }
 
 .rwd, .fwd {
+  display: inline;
   position: absolute;
   cursor: pointer;
   top: 45%;

@@ -1,3 +1,21 @@
+const menuBtn = document.getElementById('menu-icon')
+const closeMenu = document.getElementById('menu-close')
+
+
+menuBtn.addEventListener('click', () => {
+    document.getElementById('nav').style.display = 'flex'
+    document.getElementById('menu-icon').style.display = 'none'
+    document.getElementById('header').style.background = 'white'
+    document.getElementById('author').style.display = 'inline'
+})
+
+closeMenu.addEventListener('click', () => {
+    document.getElementById('nav').style.display = 'none'
+    document.getElementById('menu-icon').style.display = 'block'
+    document.getElementById('header').style.background = '#120E26'
+    document.getElementById('author').style.display = 'none'
+})
+
 // create a media query to check if the screen size is 786px or smaller
 const mq = window.matchMedia("(max-width: 768px)")
 

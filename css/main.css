@@ -739,7 +739,7 @@ main {
     top: 0;
     left: 0;
     width: 50%;
-    height: auto;
+    height: 100vh;
     background: #120E26;
     padding: 0;
     z-index: 10;
@@ -754,7 +754,7 @@ main {
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    
+    height: 50%; 
     width: 100%;
     
     padding: 1.25rem 0 0 1.25rem;

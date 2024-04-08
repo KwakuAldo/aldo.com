@@ -12,7 +12,7 @@ menuBtn.addEventListener('click', () => {
 closeMenu.addEventListener('click', () => {
     document.getElementById('nav').style.display = 'none'
     document.getElementById('menu-icon').style.display = 'block'
-    document.getElementById('header').style.background = '#120E26'
+    document.getElementById('header').style.background = 'transparent'
     document.getElementById('author').style.display = 'none'
 })
 

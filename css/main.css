@@ -779,6 +779,10 @@ main {
   margin-bottom: 2rem;
 }
 
+.author {
+  padding-bottom: 3rem;
+}
+
   #author {
     color: #120E26;
     padding-left: 1.25rem;

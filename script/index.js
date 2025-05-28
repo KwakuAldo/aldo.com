@@ -19,7 +19,7 @@ closeMenu.addEventListener('click', () => {
 // create a media query to check if the screen size is 786px or smaller
 const mq = window.matchMedia("(max-width: 768px)")
 
-// if the media query matches, run the code
+// if the media query matches, run this code
 if (mq.matches) {
     let slideIndex = 1;
     showSlides(slideIndex);

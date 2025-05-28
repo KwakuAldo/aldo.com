@@ -91,6 +91,8 @@ main {
 
 .about-p {
 	margin-left: 8rem;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .subSection p {
@@ -141,6 +143,8 @@ main {
 .kkbk {
 	color: #8FC1E2;
 	font-size: 1.5em;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .welcome {

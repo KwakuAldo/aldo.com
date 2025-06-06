@@ -168,6 +168,10 @@ main {
 	display: inline-block;
 }
 
+.live-site {
+	text-decoration: none;
+}
+
 #repos-btn {
 	background-color: #120E26;
 	color: #fff;

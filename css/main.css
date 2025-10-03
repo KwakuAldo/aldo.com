@@ -371,31 +371,31 @@ main {
 }
 
 .btn-primary {
-	background-color: var(--primary-yellow);
-	color: var(--primary-dark);
-	border: 2px solid var(--primary-yellow);
+	background-color: var(--primary-dark);
+	color: var(--primary-yellow);
+	border: 2px solid var(--primary-dark);
 }
 
 .btn-primary:hover {
-	background-color: var(--white);
+	background-color: var(--primary-yellow);
 	color: var(--primary-dark);
-	border-color: var(--white);
+	border-color: var(--primary-yellow);
 }
 
 .btn-secondary {
-	background-color: var(--primary-blue);
-	color: var(--white);
-	border: 2px solid var(--primary-blue);
+	background-color: var(--primary-dark);
+	color: var(--primary-blue);
+	border: 2px solid var(--primary-dark);
 }
 
 .btn-secondary:hover {
-	background-color: var(--white);
-	color: var(--primary-blue);
-	border-color: var(--white);
+	background-color: var(--primary-blue);
+	color: var(--white);
+	border-color: var(--primary-blue);
 }
 
 .btn-outline {
-	background-color: transparent;
+	background-color: var(--primary-dark);
 	color: var(--white);
 	border: 2px solid var(--white);
 }

@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ALDO // Works</title>
+    <title>Aldo Efui Adabunu - Portfolio Works</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/works.css">
-    <link rel="stylesheet" href="css/works.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View the portfolio works of Aldo Efui Adabunu, including Netflix Clone, Age Calculator App, Frontend Mentor challenges, and more web development projects.">
+    <meta name="keywords" content="portfolio works, web development projects, Netflix clone, frontend mentor, JavaScript projects, HTML CSS projects">
+    <meta name="author" content="Aldo Efui Adabunu">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Aldo Efui Adabunu - Portfolio Works">
+    <meta property="og:description" content="View the portfolio works of Aldo Efui Adabunu, including Netflix Clone, Age Calculator App, and Frontend Mentor challenges.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aldo.com/works.html">
+    <meta property="og:image" content="https://aldo.com/images/aldo22.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aldo Efui Adabunu - Portfolio Works">
+    <meta name="twitter:description" content="View the portfolio works of Aldo Efui Adabunu, including Netflix Clone, Age Calculator App, and Frontend Mentor challenges.">
+    <meta name="twitter:image" content="https://aldo.com/images/aldo22.jpg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/works.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
     <header class="header" id="header">
-        <img class="menu-icon" src="images/iconmonstr-menu-lined-32.png" alt="" id="menu-icon">
+        <img class="menu-icon" src="images/iconmonstr-menu-lined-32.png" alt="Open navigation menu" id="menu-icon" role="button" tabindex="0" aria-label="Open navigation menu">
         <!-- Navigation -->
         <nav class="nav" id="nav">
-            <img src="images/icon-close-menu.svg" alt="" id="menu-close">
+            <img src="images/icon-close-menu.svg" alt="Close navigation menu" id="menu-close" role="button" tabindex="0" aria-label="Close navigation menu">
             <div class="nav-items">
                 <a href="index.html" class="hvr-float">Home</a>
                 <!--<a href="#resume" class="hvr-float">My Resume</a>-->
@@ -29,175 +48,208 @@
     </header>
 
     <!--Featured works-->
-    <div class="container">
-        <h2 id="myProjects" class="h2hf">Projects</h2>
-        <div class="project-container">
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/Screenshot from 2024-06-28 18-46-23.png" alt="">
-                </div>
-                <div class="info-card">
-                    <h3>Netflix Clone</h3>
-                    <p class="projects-p">
-                        A Netflix clone that i built as my final project for the Slightly Techie Cohort 4.
-                    </p class="projects-p">
-                    <a href="https://capstoneprojectcohort2.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
-            </div>
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/desktop-design.jpg" alt="">
-                </div>
-                <div class="info-card">
-                    <h3>Age Calculator App</h3>
-                    <p class="projects-p">
-                        A simple age calculator app to hone my javascript skills.
-                    </p class="projects-p">
-                    <a href="https://agecalcuapp.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
-            </div>
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/Screenshot from 2024-06-28 18-55-22.png" alt="">
-                </div>
-                <div class="info-card">
-                    <h3>Intro Section With Dropdown Navigation</h3>
-                    <p class="projects-p">
-                        A personal portfolio website created using HTML5, CSS3, and JavaScript. This was a part of my
-                        self-development
-                        journey.
-                    </p class="projects-p">
-                    <a href="https://stalwart-chimera-4e580d.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
+    <main>
+        <div class="container">
+            <h2 id="myProjects" class="h2hf">Projects</h2>
+            <div class="project-container">
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/Screenshot from 2024-06-28 18-46-23.png" alt="Screenshot of Netflix Clone project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>Netflix Clone</h3>
+                        <p class="projects-p">
+                            A Netflix clone that I built as my final project for the Slightly Techie Cohort 4. Features responsive design, movie browsing, and user authentication.
+                        </p>
+                        <a href="https://capstoneprojectcohort2.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/desktop-design.jpg" alt="Screenshot of Age Calculator App project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>Age Calculator App</h3>
+                        <p class="projects-p">
+                            A simple age calculator app built to hone my JavaScript skills. Features date validation and responsive design.
+                        </p>
+                        <a href="https://agecalcuapp.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/Screenshot from 2024-06-28 18-55-22.png" alt="Screenshot of Intro Section with Dropdown Navigation project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>Intro Section With Dropdown Navigation</h3>
+                        <p class="projects-p">
+                            A responsive navigation component with dropdown menus. Built using HTML5, CSS3, and JavaScript as part of my self-development journey.
+                        </p>
+                        <a href="https://stalwart-chimera-4e580d.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-55-42 Developer Portfolio.png" alt="Screenshot of Developer Portfolio project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>Developer Portfolio</h3>
+                        <p class="projects-p">
+                            A personal portfolio website created using HTML5, CSS3, and JavaScript. This was a part of my self-development journey and showcases my early work.
+                        </p>
+                        <a href="https://dpsf.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-53-20 Frontend Mentor Clipboard landing page.png" alt="Screenshot of Frontend Mentor Clipboard landing page project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>Frontend Mentor Clipboard Landing Page</h3>
+                        <p class="projects-p">
+                            A landing page created for Frontend Mentor challenge. Features modern design, responsive layout, and clean code structure.
+                        </p>
+                        <a href="https://clpm.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-59-14 Frontend Mentor Manage landing page.png" alt="Screenshot of Frontend Mentor Manage landing page project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>Frontend Mentor Manage Landing Page</h3>
+                        <p class="projects-p">
+                            A landing page created for Frontend Mentor challenge. Demonstrates advanced CSS techniques and responsive design principles.
+                        </p>
+                        <a href="https://mlpm.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-00-05 Frontend Mentor Challenge Name Here.png" alt="Screenshot of Frontend Mentor Challenge project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>Frontend Mentor Challenge</h3>
+                        <p class="projects-p">
+                            A landing page created for Frontend Mentor challenge. Showcases my ability to implement designs from scratch using modern web technologies.
+                        </p>
+                        <a href="https://tgsm.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-01-13 Basketball Scoreboard.png" alt="Screenshot of Basketball Scoreboard project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>Basketball Scoreboard</h3>
+                        <p class="projects-p">
+                            A simple basketball scoreboard created using HTML5 and CSS3. Features interactive scoring and responsive design for mobile devices.
+                        </p>
+                        <a href="https://steady-syrniki-6306a1.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-12-08 PipBoy.png" alt="Screenshot of PipBoy project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>PipBoy Interface</h3>
+                        <p class="projects-p">
+                            A PipBoy-inspired interface created using HTML5 and CSS3. Features retro styling and interactive elements inspired by the Fallout game series.
+                        </p>
+                        <a href="https://aesthetic-cactus-4a9259.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <article class="work-cards">
+                    <div class="img-ctnr">
+                        <img class="projectIMGs" src="images/OSC FrontEndMentor.jpeg" alt="Screenshot of OSC FrontEnd Mentor project" loading="lazy">
+                    </div>
+                    <div class="info-card">
+                        <h3>OSC FrontEnd Mentor</h3>
+                        <p class="projects-p">
+                            A responsive HTML5 and CSS3 website built from Front End Mentor design. This project represents my early days of learning web development.
+                        </p>
+                        <a href="https://osc-frontendmentor.github.io/oscar-browser-extension/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
+                    </div>
+                </article>
+                
+                <button onclick="fwdSlides(-1)" class="rwd" aria-label="Previous project">&#10094;</button>
+                <button onclick="fwdSlides(1)" class="fwd" aria-label="Next project">&#10095;</button>
             </div>
             
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-55-42 Developer Portfolio.png" alt="">
-                </div>
-                <div class="info-card">
-                    <h3>Developer Portfolio</h3>
-                    <p class="projects-p">
-                        A personal portfolio website created using HTML5, CSS3, and JavaScript. This was a part of my self-development
-                        journey.
-                    </p class="projects-p">
-                    <a href="https://dpsf.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
+            <div class="buttons" id="project-btn">
+                <a class="btn hvr-bob" href="https://github.com/KwakuAldo?tab=repositories" id="repos-btn" target="_blank" rel="noopener noreferrer">View GitHub Repositories</a>
             </div>
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-53-20 Frontend Mentor Clipboard landing page.png"
-                        alt="">
-                </div>
-                <div class="info-card">
-                    <h3>Frontend Mentor Clipboard Landing Page</h3>
-                    <p class="projects-p">
-                        A landing page created for Frontend Mentor. This was a part of my self-development journey.
-                    </p class="projects-p">
-                    <a href="https://clpm.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
-            </div>
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-59-14 Frontend Mentor Manage landing page.png"
-                        alt="">
-                </div>
-                <div class="info-card">
-                    <h3>Frontend Mentor Manage Landing Page</h3>
-                    <p class="projects-p">
-                        A landing page created for Frontend Mentor. This was a part of my self-development journey.
-                    </p class="projects-p">
-                    <a href="https://mlpm.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
-            </div>
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-00-05 Frontend Mentor Challenge Name Here.png"
-                        alt="">
-                </div>
-                <div class="info-card">
-                    <h3>Frontend Mentor Challenge Name Here</h3>
-                    <p class="projects-p">
-                        A landing page created for Frontend Mentor. This was a part of my self-development journey.
-                    </p class="projects-p">
-                    <a href="https://tgsm.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
-            </div>
-            
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-01-13 Basketball Scoreboard.png" alt="">
-                </div>
-                <div class="info-card">
-                    <h3>Basketball Scoreboard</h3>
-                    <p class="projects-p">
-                        A simple basketball scoreboard created using HTML5 and CSS3. This was a part of my self-development
-                        journey.
-                    </p class="projects-p">
-                    <a href="https://steady-syrniki-6306a1.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
-            </div>
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-12-08 PipBoy.png" alt="">
-                </div>
-                <div class="info-card">
-                    <h3>PipBoy</h3>
-                    <p class="projects-p">
-                        A simple PipBoy game created using HTML5 and CSS3. This was a part of my self-development
-                        journey.
-                    </p class="projects-p">
-                    <a href="https://aesthetic-cactus-4a9259.netlify.app/" target="_blank" class="live-site">View Site</a>
-                </div>
-            </div>
-            <div class="work-cards">
-                <div class="img-ctnr">
-                    <img class="projectIMGs" src="images/OSC FrontEndMentor.jpeg" alt="screenshot of project">
-                </div>
-                <div class="info-card">
-                    <h3>OSC FrontEndMentor</h3>
-                    <p class="projects-p">
-                        A project where I built a responsive HTML5 and CSS3 website from Front End Mentor. This was my early days of
-                        learning web development.
-                    </p class="projects-p">
-                    <a href="https://osc-frontendmentor.github.io/oscar-browser-extension/" target="_blank" class="live-site">View
-                        Site</a>
-                </div>
-            </div>
-            
-            <button onclick="fwdSlides(-1)" class="rwd">&#10094;</button>
-            <button onclick="fwdSlides(1)" class="fwd">&#10095;</button>
         </div>
-        
-        <div class="buttons" id="project-btn">
-            <a class="btn hvr-bob" href="https://github.com/KwakuAldo?tab=repositories" id="repos-btn" target="_blank">Github repos</a>
-        </div>
-    </div>
 
-    <!--COntact-->
-    <section id="contact" class="subSection">
-        <h2 id="contactMe" class="h2hf">Contact Me</h2>
-        <p class="kkbk">I am currently looking for jobs, I need the work experience to help me grow and learn as a
-            developer. You can also just send me a message if you have any questions or just want to say hello 👋🏿</p class="projects-p">
-        <div class="buttons">
-            <a class="hvr-bob" href="mailto:akadabunu@gmail.com" target="_blank">
-                <img class="socialIcons" src="images/iconmonstr-email-2-240.png" alt="an icon to email me">
-            </a>
-            <a class="hvr-bob" href="https://twitter.com/TheGrand_Rascal" target="_blank">
-                <img class="socialIcons" src="images/iconmonstr-twitter-1-240.png" alt="an icon to my twitter profile">
-            </a>
-            <a class="hvr-bob" href="https://www.linkedin.com/in/aldo-adabunu-610008176/" target="_blank">
-                <img class="socialIcons" src="images/iconmonstr-linkedin-3-240.png" alt="an icon to my linkedin profile"
-                    target="_blank">
-            </a>
-            <a class="hvr-bob" href="https://github.com/KwakuAldo" target="_blank">
-                <img class="socialIcons" src="images/iconmonstr-github-1-240.png" alt="an icon to my github profile">
-            </a>
-            <a class=" hvr-bob" href="https://wa.me/+233558343702" target="_blank">
-                <img class="socialIcons" src="images/iconmonstr-whatsapp-1-240.png" alt="send me a whatsapp message">
-            </a>
-        </div>
-    </section>
+        <!--Contact-->
+        <section id="contact" class="subSection">
+            <h2 id="contactMe" class="h2hf">Contact Me</h2>
+            <p class="kkbk">I am currently looking for jobs, I need the work experience to help me grow and learn as a developer. You can also just send me a message if you have any questions or just want to say hello 👋🏿</p>
+            <div class="buttons">
+                <a class="hvr-bob" href="mailto:akadabunu@gmail.com" target="_blank" aria-label="Send email to Aldo">
+                    <img class="socialIcons" src="images/iconmonstr-email-2-240.png" alt="Send email to Aldo" loading="lazy">
+                </a>
+                <a class="hvr-bob" href="https://twitter.com/TheGrand_Rascal" target="_blank" rel="noopener noreferrer" aria-label="Visit Aldo's Twitter profile">
+                    <img class="socialIcons" src="images/iconmonstr-twitter-1-240.png" alt="Visit Aldo's Twitter profile" loading="lazy">
+                </a>
+                <a class="hvr-bob" href="https://www.linkedin.com/in/aldo-adabunu-610008176/" target="_blank" rel="noopener noreferrer" aria-label="Visit Aldo's LinkedIn profile">
+                    <img class="socialIcons" src="images/iconmonstr-linkedin-3-240.png" alt="Visit Aldo's LinkedIn profile" loading="lazy">
+                </a>
+                <a class="hvr-bob" href="https://github.com/KwakuAldo" target="_blank" rel="noopener noreferrer" aria-label="Visit Aldo's GitHub profile">
+                    <img class="socialIcons" src="images/iconmonstr-github-1-240.png" alt="Visit Aldo's GitHub profile" loading="lazy">
+                </a>
+                <a class="hvr-bob" href="https://wa.me/+233558343702" target="_blank" rel="noopener noreferrer" aria-label="Send WhatsApp message to Aldo">
+                    <img class="socialIcons" src="images/iconmonstr-whatsapp-1-240.png" alt="Send WhatsApp message to Aldo" loading="lazy">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Aldo Efui Adabunu - Portfolio Works",
+        "description": "Collection of web development projects by Aldo Efui Adabunu",
+        "url": "https://aldo.com/works.html",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "CreativeWork",
+                    "name": "Netflix Clone",
+                    "description": "A Netflix clone built as final project for Slightly Techie Cohort 4",
+                    "url": "https://capstoneprojectcohort2.netlify.app/"
+                },
+                {
+                    "@type": "CreativeWork", 
+                    "name": "Age Calculator App",
+                    "description": "A simple age calculator app built to hone JavaScript skills",
+                    "url": "https://agecalcuapp.netlify.app/"
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "Intro Section With Dropdown Navigation", 
+                    "description": "A responsive navigation component with dropdown menus",
+                    "url": "https://stalwart-chimera-4e580d.netlify.app/"
+                }
+            ]
+        }
+    }
+    </script>
+    
     <script src="script/works.js"></script>
+    <script src="script/performance.js"></script>
 </body>
 </html>

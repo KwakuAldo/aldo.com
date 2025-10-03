@@ -55,7 +55,7 @@ body {
 
 .menu-icon {
 	display: none;
-	color: var(--primary-dark);
+	color: var(--white);
 	cursor: pointer;
 	transition: transform var(--transition-fast);
 }
@@ -422,6 +422,7 @@ main {
 .btn {
 	border: 2px solid var(--primary-yellow);
 	color: var(--primary-yellow);
+	background-color: rgba(249, 200, 70, 0.1);
 	font-size: 1em;
 	line-height: 1;
 	border-radius: 20px;
@@ -967,6 +968,8 @@ main {
 	.menu-icon {
 		display: block;
 		padding: 1.25rem 0 0 1.25rem;
+		color: var(--white);
+		filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8));
 	}
 
 	.nav {

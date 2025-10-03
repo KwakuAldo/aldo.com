@@ -28,8 +28,26 @@
 		
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="images/logo.png">
+		
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'GA_MEASUREMENT_ID');
+		</script>
 	</head>
 	<body>
+		<!-- Availability Banner -->
+		<div class="availability-banner">
+			<div class="availability-content">
+				<span class="status-dot available"></span>
+				<span class="availability-text">Available for new opportunities</span>
+				<a href="#contact" class="availability-cta">Let's Connect</a>
+			</div>
+		</div>
+		
 		<header class="header" id="header">
 			<img class="menu-icon" src="images/iconmonstr-menu-lined-32.png" alt="Open navigation menu" id="menu-icon" role="button" tabindex="0" aria-label="Open navigation menu">
 		<!-- Navigation -->
@@ -37,7 +55,7 @@
 				<img src="images/icon-close-menu.svg" alt="Close navigation menu" id="menu-close" role="button" tabindex="0" aria-label="Close navigation menu">
 				<div class="nav-items">
 					<a href="index.html" class="hvr-float">Home</a>
-					<!--<a href="#resume" class="hvr-float">My Resume</a>-->
+					<a href="resume.html" class="hvr-float">Resume</a>
 					<a href="works.html" class="hvr-float">My Works</a>
 					<a href="#contact" class="hvr-float">Contact Me</a>
 				</div>
@@ -85,14 +103,142 @@
 							<img width="100%" src="images/aldo22.jpg" alt="Aldo Efui Adabunu working on a computer" loading="lazy">
 						</div>
 						<div class="about-p">
-							<p class="kkbk">I am a self-taught front-end developer based in Ghana. I have designed web pages with CSS, Bootstrap,
-								TailwindCSS and JavaScript. I am passionate about building beautiful and responsive web pages. I love learning and
-								my goal is to become a competent software engineer. I am a hard working team player and willing to learn something
-								new each day to help me reach my goal.</p>
+							<p class="kkbk">I am a passionate frontend developer and system administrator based in Ghana, with expertise in modern web technologies including HTML5, CSS3, JavaScript, React, Bootstrap, and TailwindCSS. I specialize in creating responsive, accessible, and performant web applications that deliver exceptional user experiences.</p>
 							<br>
-							<p class="kkbk">I am also a trained system administrator with a little bit of experience as a teacher. I am working on
-								my writing skill so as to be able to give back as a technical writer and help beginners especially break into the
-								tech industry.</p>
+							<p class="kkbk">With a strong foundation in system administration and a commitment to continuous learning, I bring a unique perspective to web development projects. I have successfully completed multiple Frontend Mentor challenges and built a Netflix clone as part of the Slightly Techie Cohort 4 program, demonstrating my ability to work with complex applications and modern development practices.</p>
+							<br>
+							<p class="kkbk">I am actively seeking opportunities to contribute to innovative projects while continuing to grow as a developer. My goal is to join a dynamic team where I can apply my technical skills, learn from experienced professionals, and make meaningful contributions to impactful projects.</p>
+						</div>
+					</div>
+				</section>
+
+				<!--Skills Section-->
+				<section id="skills" class="subSection">
+					<h2 class="h2hf">Technical Skills</h2>
+					<div class="skills-container">
+						<div class="skill-category">
+							<h3>Frontend Development</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">HTML5</span>
+								<span class="skill-tag">CSS3</span>
+								<span class="skill-tag">JavaScript (ES6+)</span>
+								<span class="skill-tag">React</span>
+								<span class="skill-tag">Bootstrap</span>
+								<span class="skill-tag">TailwindCSS</span>
+								<span class="skill-tag">Responsive Design</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Tools & Technologies</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">Git & GitHub</span>
+								<span class="skill-tag">Netlify</span>
+								<span class="skill-tag">VS Code</span>
+								<span class="skill-tag">Chrome DevTools</span>
+								<span class="skill-tag">Figma</span>
+								<span class="skill-tag">System Administration</span>
+							</div>
+						</div>
+						<div class="skill-category">
+							<h3>Soft Skills</h3>
+							<div class="skill-tags">
+								<span class="skill-tag">Problem Solving</span>
+								<span class="skill-tag">Team Collaboration</span>
+								<span class="skill-tag">Continuous Learning</span>
+								<span class="skill-tag">Technical Writing</span>
+								<span class="skill-tag">Mentoring</span>
+								<span class="skill-tag">Project Management</span>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!--Learning Journey Section-->
+				<section id="learning-journey" class="subSection">
+					<h2 class="h2hf">My Learning Journey</h2>
+					<div class="timeline">
+						<div class="timeline-item">
+							<div class="timeline-marker"></div>
+							<div class="timeline-content">
+								<h3>2024 - Present</h3>
+								<h4>Advanced Frontend Development</h4>
+								<p>Mastering React, advanced JavaScript concepts, and modern development practices. Building complex applications and contributing to open source projects.</p>
+							</div>
+						</div>
+						
+						<div class="timeline-item">
+							<div class="timeline-marker"></div>
+							<div class="timeline-content">
+								<h3>2024</h3>
+								<h4>Slightly Techie Cohort 4</h4>
+								<p>Completed comprehensive frontend development program. Built Netflix clone as final project, demonstrating full-stack capabilities and modern web development practices.</p>
+							</div>
+						</div>
+						
+						<div class="timeline-item">
+							<div class="timeline-marker"></div>
+							<div class="timeline-content">
+								<h3>2022-2023</h3>
+								<h4>Frontend Mentor Challenges</h4>
+								<p>Completed multiple design challenges, improving HTML, CSS, and JavaScript skills. Focused on responsive design, accessibility, and modern CSS techniques.</p>
+							</div>
+						</div>
+						
+						<div class="timeline-item">
+							<div class="timeline-marker"></div>
+							<div class="timeline-content">
+								<h3>2022</h3>
+								<h4>Self-Taught Development</h4>
+								<p>Started learning web development through online resources. Built first projects including basketball scoreboard and PipBoy interface, establishing foundation in HTML, CSS, and JavaScript.</p>
+							</div>
+						</div>
+						
+						<div class="timeline-item">
+							<div class="timeline-marker"></div>
+							<div class="timeline-content">
+								<h3>Previous</h3>
+								<h4>System Administration Background</h4>
+								<p>Professional experience in IT infrastructure management, server administration, and technical support. This foundation provides unique perspective on web development projects.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="learning-goals">
+						<h3>Future Learning Goals</h3>
+						<div class="goals-grid">
+							<div class="goal-item">
+								<h4>Backend Development</h4>
+								<p>Node.js, Express, databases</p>
+							</div>
+							<div class="goal-item">
+								<h4>Advanced React</h4>
+								<p>Hooks, Context, Redux</p>
+							</div>
+							<div class="goal-item">
+								<h4>DevOps</h4>
+								<p>CI/CD, Docker, AWS</p>
+							</div>
+							<div class="goal-item">
+								<h4>Mobile Development</h4>
+								<p>React Native, PWA</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!--GitHub Stats Section-->
+				<section id="github-stats" class="subSection">
+					<h2 class="h2hf">GitHub Activity</h2>
+					<div class="github-stats-container">
+						<div class="github-stats-grid">
+							<img src="https://github-readme-stats.vercel.app/api?username=KwakuAldo&show_icons=true&theme=default&hide_border=true" alt="GitHub Stats" class="github-stats-img">
+							<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=KwakuAldo&layout=compact&theme=default&hide_border=true" alt="Top Languages" class="github-stats-img">
+						</div>
+						<div class="github-contributions">
+							<img src="https://github-readme-activity-graph.vercel.app/graph?username=KwakuAldo&theme=default&hide_border=true" alt="GitHub Activity Graph" class="github-activity-img">
+						</div>
+						<div class="github-link">
+							<a href="https://github.com/KwakuAldo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Full GitHub Profile</a>
 						</div>
 					</div>
 				</section>
@@ -139,9 +285,94 @@
 						<a class="btn hvr-bob" href="https://github.com/KwakuAldo?tab=repositories" target="_blank" rel="noopener noreferrer">View GitHub Repositories</a>
 					</div>
 				</section>
+
+				<!--Testimonials Section-->
+				<section id="testimonials" class="subSection">
+					<h2 class="h2hf">What People Say</h2>
+					<div class="testimonials-container">
+						<div class="testimonial-card">
+							<div class="testimonial-content">
+								<p>"Aldo delivered exceptional work on our project. His attention to detail and problem-solving skills are outstanding. He's a dedicated developer who goes above and beyond to ensure quality results."</p>
+							</div>
+							<div class="testimonial-author">
+								<div class="author-info">
+									<h4>Slightly Techie Team</h4>
+									<p>Educational Program</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="testimonial-card">
+							<div class="testimonial-content">
+								<p>"Working with Aldo has been a great experience. His technical skills combined with his willingness to learn and adapt make him a valuable team member. Highly recommended for any development project."</p>
+							</div>
+							<div class="testimonial-author">
+								<div class="author-info">
+									<h4>Frontend Mentor Community</h4>
+									<p>Development Community</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="testimonial-card">
+							<div class="testimonial-content">
+								<p>"Aldo's portfolio demonstrates his growth as a developer. His projects show creativity, technical proficiency, and a strong understanding of modern web development practices."</p>
+							</div>
+							<div class="testimonial-author">
+								<div class="author-info">
+									<h4>Development Peers</h4>
+									<p>Tech Community</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
 				<section id="contact" class="subSection">
-					<h2 id="contactMe" class="h2hf">Contact Me</h2>
-					<p class="kkbk">I am currently looking for jobs, I need the work experience to help me grow and learn as a developer. You can also just send me a message if you have any questions or just want to say hello 👋🏿</p>
+					<h2 id="contactMe" class="h2hf">Let's Work Together</h2>
+					<p class="kkbk">I'm actively seeking frontend development opportunities and excited to contribute to innovative projects. Whether you're looking for a dedicated developer to join your team or need help with a specific project, I'd love to hear from you!</p>
+					<div class="cta-section">
+						<h3>Ready to discuss opportunities?</h3>
+						<div class="cta-buttons">
+							<a href="mailto:akadabunu@gmail.com" class="btn btn-primary">Send Email</a>
+							<a href="https://www.linkedin.com/in/aldo-adabunu-610008176/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Connect on LinkedIn</a>
+							<a href="resume.html" class="btn btn-outline">View Resume</a>
+						</div>
+					</div>
+					
+					<!-- Contact Form -->
+					<div class="contact-form-section">
+						<h3>Send me a message</h3>
+						<form class="contact-form" id="contactForm">
+							<div class="form-group">
+								<label for="name">Name *</label>
+								<input type="text" id="name" name="name" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email *</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+							<div class="form-group">
+								<label for="company">Company</label>
+								<input type="text" id="company" name="company">
+							</div>
+							<div class="form-group">
+								<label for="subject">Subject *</label>
+								<select id="subject" name="subject" required>
+									<option value="">Select a subject</option>
+									<option value="job-opportunity">Job Opportunity</option>
+									<option value="freelance-project">Freelance Project</option>
+									<option value="collaboration">Collaboration</option>
+									<option value="general-inquiry">General Inquiry</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="message">Message *</label>
+								<textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or opportunity..."></textarea>
+							</div>
+							<button type="submit" class="btn btn-primary">Send Message</button>
+						</form>
+					</div>
 					<div class="buttons">
 						<a class=" hvr-bob" href="mailto:akadabunu@gmail.com" target="_blank">
 							<img class="socialIcons" src="images/iconmonstr-email-2-240.png" alt="Send email to Aldo" loading="lazy">
@@ -183,7 +414,7 @@
 				"@type": "PostalAddress",
 				"addressCountry": "Ghana"
 			},
-			"knowsAbout": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "TailwindCSS", "Web Development", "System Administration"]
+			"knowsAbout": ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "TailwindCSS", "Web Development", "System Administration"]
 		}
 		</script>
 		

@@ -215,6 +215,89 @@ document.addEventListener('DOMContentLoaded', function() {
         // You could send error reports to a logging service here
     });
 
+    // ===== CONTACT FORM HANDLING =====
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+            
+            // Create email body
+            const emailBody = `
+Name: ${data.name}
+Email: ${data.email}
+Company: ${data.company || 'Not provided'}
+Subject: ${data.subject}
+Message: ${data.message}
+            `.trim();
+            
+            // Create mailto link
+            const mailtoLink = `mailto:akadabunu@gmail.com?subject=${encodeURIComponent('Portfolio Contact: ' + data.subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showNotification('Thank you! Your email client should open with a pre-filled message.', 'success');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+
+    // ===== NOTIFICATION SYSTEM =====
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'success' ? '#4CAF50' : '#2196F3'};
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10000;
+            max-width: 300px;
+            animation: slideIn 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 4000);
+    }
+
+    // ===== SMOOTH SCROLLING FOR AVAILABILITY BANNER =====
+    const availabilityCta = document.querySelector('.availability-cta');
+    if (availabilityCta) {
+        availabilityCta.addEventListener('click', function(e) {
+            e.preventDefault();
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+
     // ===== CONSOLE WELCOME MESSAGE =====
     console.log('%c👋 Welcome to Aldo\'s Portfolio!', 'color: #f9c846; font-size: 20px; font-weight: bold;');
     console.log('%cBuilt with ❤️ by Aldo Efui Adabunu', 'color: #8FC1E2; font-size: 14px;');

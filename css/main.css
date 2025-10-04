@@ -57,10 +57,27 @@ body {
 	display: none;
 	color: var(--white);
 	cursor: pointer;
-	transition: transform var(--transition-fast);
+	transition: all var(--transition-fast);
+	opacity: 1;
+}
+
+/* Ensure menu icon is hidden on desktop */
+@media screen and (min-width: 769px) {
+	.menu-icon {
+		display: none !important;
+	}
 }
 
 .menu-icon:hover {
+	transform: scale(1.1);
+}
+
+/* Icon transformation states */
+.menu-icon.menu-open {
+	filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8)) brightness(1.2);
+}
+
+.menu-icon.menu-open:hover {
 	transform: scale(1.1);
 }
 
@@ -70,9 +87,25 @@ body {
 	padding: var(--spacing-sm);
 }
 
+/* Ensure nav is visible on desktop */
+@media screen and (min-width: 769px) {
+	.nav {
+		display: flex !important;
+	}
+}
+
 .nav-items {
 	display: flex;
 	gap: var(--spacing-lg);
+}
+
+/* Ensure nav-items are visible on desktop */
+@media screen and (min-width: 769px) {
+	.nav-items {
+		display: flex !important;
+		flex-direction: row !important;
+		gap: var(--spacing-lg) !important;
+	}
 }
 
 .nav-items > a {
@@ -371,8 +404,8 @@ main {
 }
 
 .btn-primary {
-	background-color: var(--primary-dark);
-	color: var(--primary-yellow);
+	background-color: var(--primary-yellow);
+	color: var(--primary-dark);
 	border: 2px solid var(--primary-dark);
 }
 
@@ -962,24 +995,36 @@ main {
 		height: 100vh;
 		background: transparent;
 		padding: 0;
-		z-index: 10;
+		z-index: 1002;
 	}
 
 	.menu-icon {
-		display: block;
+		display: block !important;
 		padding: 1.25rem 0 0 1.25rem;
 		color: var(--white);
 		filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8));
+		opacity: 1 !important;
+		position: relative;
+		z-index: 1003;
+		transition: all var(--transition-fast);
+	}
+
+	.menu-icon.menu-open {
+		filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8)) brightness(1.2);
+	}
+
+	.menu-icon.menu-open:hover {
+		transform: scale(1.1);
 	}
 
 	.nav {
 		display: none;
 		flex-direction: column;
 		align-items: flex-start;
-		height: 50%; 
 		width: 100%;
 		padding: 1.25rem 0 0 1.25rem;
 	}
+
 
 	.nav-items {
 		display: flex;
@@ -1172,6 +1217,21 @@ main {
 	.h2hf {
 		font-size: 2rem;
 	}
+}
+
+/* ===== LAZY LOADING STYLES ===== */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Navigation icons should always be visible */
+img[data-critical] {
+    opacity: 1 !important;
 }
 
 /* ===== ACCESSIBILITY IMPROVEMENTS ===== */

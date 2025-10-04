@@ -4,41 +4,42 @@
 document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE NAVIGATION =====
     const menuBtn = document.getElementById('menu-icon');
-    const closeMenu = document.getElementById('menu-close');
     const nav = document.getElementById('nav');
     const header = document.getElementById('header');
     const author = document.getElementById('author');
+    let isMenuOpen = false;
 
     // Check if elements exist before adding event listeners
-    if (menuBtn && closeMenu && nav && header && author) {
-        // Open mobile menu
+    if (menuBtn && nav && header && author) {
+        // Toggle mobile menu
         menuBtn.addEventListener('click', function() {
-            nav.style.display = 'flex';
-            menuBtn.style.display = 'none';
-            header.style.background = 'white';
-            author.style.display = 'inline';
-            
-            // Add ARIA attributes for accessibility
-            nav.setAttribute('aria-expanded', 'true');
-            menuBtn.setAttribute('aria-expanded', 'true');
-            
-            // Focus management
-            closeMenu.focus();
-        });
-
-        // Close mobile menu
-        closeMenu.addEventListener('click', function() {
-            nav.style.display = 'none';
-            menuBtn.style.display = 'block';
-            header.style.background = 'transparent';
-            author.style.display = 'none';
-            
-            // Remove ARIA attributes
-            nav.setAttribute('aria-expanded', 'false');
-            menuBtn.setAttribute('aria-expanded', 'false');
-            
-            // Focus management
-            menuBtn.focus();
+            if (!isMenuOpen) {
+                // Open menu
+                nav.style.display = 'flex';
+                menuBtn.src = 'images/icon-close-menu.svg';
+                menuBtn.classList.add('menu-open');
+                header.style.background = 'white';
+                author.style.display = 'inline';
+                isMenuOpen = true;
+                
+                // Update ARIA attributes
+                nav.setAttribute('aria-expanded', 'true');
+                menuBtn.setAttribute('aria-expanded', 'true');
+                menuBtn.setAttribute('aria-label', 'Close navigation menu');
+            } else {
+                // Close menu
+                nav.style.display = 'none';
+                menuBtn.src = 'images/iconmonstr-menu-lined-32.png';
+                menuBtn.classList.remove('menu-open');
+                header.style.background = 'transparent';
+                author.style.display = 'none';
+                isMenuOpen = false;
+                
+                // Update ARIA attributes
+                nav.setAttribute('aria-expanded', 'false');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.setAttribute('aria-label', 'Open navigation menu');
+            }
         });
 
         // Keyboard navigation for mobile menu
@@ -49,24 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        closeMenu.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                closeMenu.click();
-            }
-        });
-
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!nav.contains(e.target) && !menuBtn.contains(e.target) && nav.style.display === 'flex') {
-                closeMenu.click();
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target) && isMenuOpen) {
+                menuBtn.click();
             }
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && nav.style.display === 'flex') {
-                closeMenu.click();
+            if (e.key === 'Escape' && isMenuOpen) {
+                menuBtn.click();
             }
         });
     }
@@ -145,21 +139,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ===== LAZY LOADING FOR IMAGES =====
-    const images = document.querySelectorAll('img[loading="lazy"]');
+    // Only apply lazy loading to images that are NOT navigation icons
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]:not([data-critical])');
     
-    if ('IntersectionObserver' in window) {
+    if ('IntersectionObserver' in window && lazyImages.length > 0) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.src = img.src || img.dataset.src;
-                    img.classList.remove('lazy');
+                    
+                    // Add a small delay to ensure smooth loading
+                    setTimeout(() => {
+                        img.classList.add('loaded');
+                    }, 100);
+                    
                     observer.unobserve(img);
                 }
             });
+        }, {
+            // Load images when they're 50px away from viewport
+            rootMargin: '50px 0px',
+            threshold: 0.01
         });
 
-        images.forEach(img => {
+        lazyImages.forEach(img => {
             imageObserver.observe(img);
         });
     }

@@ -62,12 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Social icons loading
     const socialIcons = document.querySelectorAll('.socialIcons');
-    socialIcons.forEach((icon, index) => {
+    socialIcons.forEach((icon) => {
         icon.addEventListener('error', function() {
-            console.log(`Social icon ${index + 1} failed to load:`, this.src);
-        });
-        icon.addEventListener('load', function() {
-            console.log(`Social icon ${index + 1} loaded successfully:`, this.src);
+            // Try to reload the image with cache buster
+            const originalSrc = this.src.split('?')[0];
+            this.src = originalSrc + '?t=' + Date.now();
         });
     });
 

@@ -61,6 +61,17 @@
     text-decoration: none;
     border-radius: 8px;
     transition: all var(--transition-fast);
+    position: relative;
+}
+
+.phone-option .phone-icon-img {
+    flex-shrink: 0;
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
 
 .phone-option:hover {
@@ -74,12 +85,18 @@
 }
 
 .phone-icon-img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    display: block;
-    visibility: visible;
-    opacity: 1;
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 .phone-close {
@@ -424,10 +441,10 @@
         font-size: 1.1rem;
     }
     
-    .phone-icon-img {
+    .phone-option .phone-icon-img {
         width: 24px !important;
         height: 24px !important;
-        display: block !important;
+        display: inline-block !important;
         visibility: visible !important;
         opacity: 1 !important;
     }

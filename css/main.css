@@ -176,6 +176,25 @@ main {
 	margin-top: 12rem;
 }
 
+/* ===== TYPING ANIMATION ===== */
+.typing-text {
+	position: relative;
+	overflow: hidden;
+	border-right: 2px solid var(--primary-yellow);
+	white-space: nowrap;
+	animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+	from { width: 0; }
+	to { width: 100%; }
+}
+
+@keyframes blink-caret {
+	from, to { border-color: transparent; }
+	50% { border-color: var(--primary-yellow); }
+}
+
 /* ===== HERO SECTION ===== */
 .hero_img {
 	display: flex;
@@ -1046,6 +1065,14 @@ main {
 		opacity: 1 !important;
 		width: 2rem !important;
 		height: 2rem !important;
+	}
+
+	/* Mobile typing animation */
+	.typing-text {
+		font-size: 1.2em;
+		white-space: normal;
+		border-right: none;
+		animation: none;
 	}
 
 	.nav {

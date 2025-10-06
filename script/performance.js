@@ -118,23 +118,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== PERFORMANCE MONITORING =====
     function monitorPerformance() {
         // Monitor Core Web Vitals
-        if ('PerformanceObserver' in window) {
+        if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes) {
             // Largest Contentful Paint
-            const lcpObserver = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                const lastEntry = entries[entries.length - 1];
-                console.log('LCP:', lastEntry.startTime);
-            });
-            lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+            if (PerformanceObserver.supportedEntryTypes.includes('largest-contentful-paint')) {
+                const lcpObserver = new PerformanceObserver((list) => {
+                    const entries = list.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    console.log('LCP:', lastEntry.startTime);
+                });
+                lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+            }
 
             // First Input Delay
-            const fidObserver = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                entries.forEach((entry) => {
-                    console.log('FID:', entry.processingStart - entry.startTime);
+            if (PerformanceObserver.supportedEntryTypes.includes('first-input')) {
+                const fidObserver = new PerformanceObserver((list) => {
+                    const entries = list.getEntries();
+                    entries.forEach((entry) => {
+                        console.log('FID:', entry.processingStart - entry.startTime);
+                    });
                 });
-            });
-            fidObserver.observe({ entryTypes: ['first-input'] });
+                fidObserver.observe({ entryTypes: ['first-input'] });
+            }
 
             // Cumulative Layout Shift
             const clsObserver = new PerformanceObserver((list) => {
@@ -147,7 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 console.log('CLS:', clsValue);
             });
-            clsObserver.observe({ entryTypes: ['layout-shift'] });
+            if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes && PerformanceObserver.supportedEntryTypes.includes('layout-shift')) {
+                clsObserver.observe({ entryTypes: ['layout-shift'] });
+            }
         }
     }
 

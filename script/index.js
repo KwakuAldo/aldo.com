@@ -4,83 +4,40 @@
 document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE NAVIGATION =====
     const menuBtn = document.getElementById('menu-icon');
+    const closeMenu = document.getElementById('menu-close');
     const nav = document.getElementById('nav');
     const header = document.getElementById('header');
     const author = document.getElementById('author');
-    let isMenuOpen = false;
-
-    // ===== CHROME MOBILE FIX =====
-    // Force show menu icon on mobile devices (Chrome fix)
-    function checkMobileAndShowMenu() {
-        if (window.innerWidth <= 768) {
-            if (menuBtn) {
-                menuBtn.style.display = 'block';
-                menuBtn.style.visibility = 'visible';
-                menuBtn.style.opacity = '1';
-            }
-        } else {
-            if (menuBtn) {
-                menuBtn.style.display = 'none';
-            }
-        }
-    }
-
-    // Check on load and resize
-    checkMobileAndShowMenu();
-    window.addEventListener('resize', checkMobileAndShowMenu);
 
     // Check if elements exist before adding event listeners
-    if (menuBtn && nav && header && author) {
-        // Toggle mobile menu
+    if (menuBtn && closeMenu && nav && header && author) {
+        // Open mobile menu
         menuBtn.addEventListener('click', function() {
-            if (!isMenuOpen) {
-                // Open menu
-                nav.style.display = 'flex';
-                menuBtn.src = 'images/icon-close-menu.svg';
-                menuBtn.classList.add('menu-open');
-                header.style.background = 'white';
-                author.style.display = 'inline';
-                isMenuOpen = true;
-                
-                // Update ARIA attributes
-                nav.setAttribute('aria-expanded', 'true');
-                menuBtn.setAttribute('aria-expanded', 'true');
-                menuBtn.setAttribute('aria-label', 'Close navigation menu');
-            } else {
-                // Close menu
-                nav.style.display = 'none';
-                menuBtn.src = 'images/iconmonstr-menu-lined-32.png';
-                menuBtn.classList.remove('menu-open');
-                header.style.background = 'transparent';
-                author.style.display = 'none';
-                isMenuOpen = false;
-                
-                // Update ARIA attributes
-                nav.setAttribute('aria-expanded', 'false');
-                menuBtn.setAttribute('aria-expanded', 'false');
-                menuBtn.setAttribute('aria-label', 'Open navigation menu');
-            }
+            nav.style.display = 'flex';
+            menuBtn.style.display = 'none';
+            header.style.background = 'white';
+            author.style.display = 'inline';
         });
 
-        // Keyboard navigation for mobile menu
-        menuBtn.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                menuBtn.click();
-            }
+        // Close mobile menu
+        closeMenu.addEventListener('click', function() {
+            nav.style.display = 'none';
+            menuBtn.style.display = 'block';
+            header.style.background = 'transparent';
+            author.style.display = 'none';
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!nav.contains(e.target) && !menuBtn.contains(e.target) && isMenuOpen) {
-                menuBtn.click();
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target) && nav.style.display === 'flex') {
+                closeMenu.click();
             }
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isMenuOpen) {
-                menuBtn.click();
+            if (e.key === 'Escape' && nav.style.display === 'flex') {
+                closeMenu.click();
             }
         });
     }
@@ -321,144 +278,6 @@ Message: ${data.message}
         });
     }
 
-    // ===== THEME TOGGLE =====
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.querySelector('.theme-icon');
-    
-    if (themeToggle) {
-        // Load saved theme or default to light
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-        
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-            localStorage.setItem('theme', newTheme);
-        });
-    }
-
-    // ===== SCROLL PROGRESS =====
-    const scrollProgress = document.getElementById('scroll-progress');
-    
-    if (scrollProgress) {
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
-        });
-    }
-
-    // ===== ANIMATED SKILL BARS =====
-    const skillBars = document.querySelectorAll('.skill-fill');
-    
-    if (skillBars.length > 0) {
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillFill = entry.target;
-                    const width = skillFill.getAttribute('data-width');
-                    skillFill.style.width = width;
-                    skillObserver.unobserve(skillFill);
-                }
-            });
-        }, observerOptions);
-        
-        skillBars.forEach(bar => {
-            skillObserver.observe(bar);
-        });
-    }
-
-    // ===== TYPING ANIMATION =====
-    const typingText = document.getElementById('typing-text');
-    const texts = [
-        'Frontend Developer / System Administrator',
-        'Problem Solver / Creative Thinker',
-        'Always Learning / Always Growing',
-        'Building Amazing Web Experiences'
-    ];
-    
-    if (typingText) {
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        
-        function typeText() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typingText.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingText.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            let typeSpeed = isDeleting ? 50 : 100;
-            
-            if (!isDeleting && charIndex === currentText.length) {
-                typeSpeed = 2000; // Pause at end
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                typeSpeed = 500; // Pause before typing next text
-            }
-            
-            setTimeout(typeText, typeSpeed);
-        }
-        
-        // Start typing animation after initial load
-        setTimeout(typeText, 2000);
-    }
-
-    // ===== PARTICLES BACKGROUND =====
-    const particlesContainer = document.getElementById('particles-container');
-    
-    if (particlesContainer) {
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            
-            // Random position
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            
-            // Random animation delay
-            particle.style.animationDelay = Math.random() * 6 + 's';
-            
-            // Random size
-            const size = Math.random() * 4 + 2;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            
-            particlesContainer.appendChild(particle);
-            
-            // Remove particle after animation
-            setTimeout(() => {
-                if (particle.parentNode) {
-                    particle.parentNode.removeChild(particle);
-                }
-            }, 6000);
-        }
-        
-        // Create particles periodically
-        setInterval(createParticle, 300);
-        
-        // Create initial particles
-        for (let i = 0; i < 10; i++) {
-            setTimeout(createParticle, i * 100);
-        }
-    }
 
     // ===== CONSOLE WELCOME MESSAGE =====
     console.log('%c👋 Welcome to Aldo\'s Portfolio!', 'color: #f9c846; font-size: 20px; font-weight: bold;');

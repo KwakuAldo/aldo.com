@@ -54,9 +54,6 @@
 		</script>
 	</head>
 	<body>
-		<!-- Scroll Progress Indicator -->
-		<div class="scroll-progress" id="scroll-progress"></div>
-		
 		<!-- Availability Banner -->
 		<div class="availability-banner">
 			<div class="availability-content">
@@ -67,12 +64,10 @@
 		</div>
 		
 		<header class="header" id="header">
-			<img class="menu-icon" src="images/iconmonstr-menu-lined-32.png" alt="Toggle navigation menu" id="menu-icon" role="button" tabindex="0" aria-label="Toggle navigation menu" data-critical>
-			<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
-				<span class="theme-icon">🌙</span>
-			</button>
+			<img class="menu-icon" src="images/iconmonstr-menu-lined-32.png" alt="Menu" id="menu-icon">
 		<!-- Navigation -->
 			<nav class="nav" id="nav">
+				<img src="images/icon-close-menu.svg" alt="Close" id="menu-close">
 				<div class="nav-items">
 					<a href="index.html" class="hvr-float">Home</a>
 					<a href="resume.html" class="hvr-float">Resume</a>
@@ -88,14 +83,13 @@
 		<main>
 			<section class="container">
 				<section id="hero" class="subSection1">
-					<div class="particles-container" id="particles-container"></div>
 					<div class="hero_img">
-						<img id="hero_img" src="images/hero_3.jpg" alt="Professional headshot of Aldo Efui Adabunu, a frontend developer" loading="lazy" decoding="async" fetchpriority="high">
+						<img id="hero_img" src="images/hero_3.jpg" alt="Professional headshot of Aldo Efui Adabunu, a frontend developer">
 					</div>
 
 					<article class="small_intro">
 						<h1 class="focus-in-contract-bck tracking-in-expand">Aldo Efui Adabunu</h1>
-						<p class="kkbk typing-text" id="typing-text">Frontend Developer / System Administrator</p>
+						<p class="kkbk">Frontend Developer / System Administrator</p>
 						<div class="hero-icons">
 							<a href="https://github.com/KwakuAldo" target="_blank" rel="noopener noreferrer">
 								<img class="socialIcons hvr-bob" src="images/iconmonstr-github-1-240.png" alt="Visit Aldo's GitHub profile" loading="lazy" decoding="async">
@@ -139,45 +133,11 @@
 					<div class="skills-container">
 						<div class="skill-category">
 							<h3>Frontend Development</h3>
-							<div class="skill-bars">
-								<div class="skill-bar">
-									<div class="skill-info">
-										<span class="skill-name">HTML5</span>
-										<span class="skill-percentage">95%</span>
-									</div>
-									<div class="skill-progress">
-										<div class="skill-fill" data-width="95%"></div>
-									</div>
-								</div>
-								<div class="skill-bar">
-									<div class="skill-info">
-										<span class="skill-name">CSS3</span>
-										<span class="skill-percentage">90%</span>
-									</div>
-									<div class="skill-progress">
-										<div class="skill-fill" data-width="90%"></div>
-									</div>
-								</div>
-								<div class="skill-bar">
-									<div class="skill-info">
-										<span class="skill-name">JavaScript</span>
-										<span class="skill-percentage">85%</span>
-									</div>
-									<div class="skill-progress">
-										<div class="skill-fill" data-width="85%"></div>
-									</div>
-								</div>
-								<div class="skill-bar">
-									<div class="skill-info">
-										<span class="skill-name">React</span>
-										<span class="skill-percentage">80%</span>
-									</div>
-									<div class="skill-progress">
-										<div class="skill-fill" data-width="80%"></div>
-									</div>
-								</div>
-							</div>
 							<div class="skill-tags">
+								<span class="skill-tag">HTML5</span>
+								<span class="skill-tag">CSS3</span>
+								<span class="skill-tag">JavaScript (ES6+)</span>
+								<span class="skill-tag">React</span>
 								<span class="skill-tag">Bootstrap</span>
 								<span class="skill-tag">TailwindCSS</span>
 								<span class="skill-tag">Responsive Design</span>
@@ -338,58 +298,6 @@
 
 					<div class="buttons" id="project-btn">
 						<a class="btn hvr-bob" href="https://github.com/KwakuAldo?tab=repositories" target="_blank" rel="noopener noreferrer">View GitHub Repositories</a>
-					</div>
-				</section>
-
-				<!--Blog Section-->
-				<section id="blog" class="subSection">
-					<h2 class="h2hf">Latest Thoughts</h2>
-					<div class="blog-container">
-						<div class="blog-card">
-							<div class="blog-image">
-								<img src="images/hero_3.jpg" alt="Blog post thumbnail" loading="lazy" decoding="async">
-							</div>
-							<div class="blog-content">
-								<h3>My Journey as a Self-Taught Developer</h3>
-								<p>Reflecting on the challenges and triumphs of learning web development independently...</p>
-								<div class="blog-meta">
-									<span class="blog-date">Dec 15, 2024</span>
-									<span class="blog-read-time">5 min read</span>
-								</div>
-								<a href="#" class="blog-link">Read More</a>
-							</div>
-						</div>
-						<div class="blog-card">
-							<div class="blog-image">
-								<img src="images/aldo22.jpg" alt="Blog post thumbnail" loading="lazy" decoding="async">
-							</div>
-							<div class="blog-content">
-								<h3>Building Responsive Web Applications</h3>
-								<p>Best practices for creating mobile-first, accessible web applications that work everywhere...</p>
-								<div class="blog-meta">
-									<span class="blog-date">Dec 10, 2024</span>
-									<span class="blog-read-time">7 min read</span>
-								</div>
-								<a href="#" class="blog-link">Read More</a>
-							</div>
-						</div>
-						<div class="blog-card">
-							<div class="blog-image">
-								<img src="images/hero_3.jpg" alt="Blog post thumbnail" loading="lazy" decoding="async">
-							</div>
-							<div class="blog-content">
-								<h3>Modern JavaScript: ES6+ Features</h3>
-								<p>Exploring the powerful features of modern JavaScript that make development more efficient...</p>
-								<div class="blog-meta">
-									<span class="blog-date">Dec 5, 2024</span>
-									<span class="blog-read-time">6 min read</span>
-								</div>
-								<a href="#" class="blog-link">Read More</a>
-							</div>
-						</div>
-					</div>
-					<div class="blog-cta">
-						<a href="#" class="btn btn-primary">View All Posts</a>
 					</div>
 				</section>
 

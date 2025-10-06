@@ -291,6 +291,13 @@ main {
 	transform: scale(1.05);
 }
 
+/* Force side image visibility - high specificity */
+.about-container .side-image img {
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: block !important;
+}
+
 /* ===== SKILLS SECTION ===== */
 .skills-container {
 	display: grid;

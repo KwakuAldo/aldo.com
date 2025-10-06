@@ -77,6 +77,9 @@
     width: 20px;
     height: 20px;
     object-fit: contain;
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .phone-close {
@@ -422,8 +425,11 @@
     }
     
     .phone-icon-img {
-        width: 24px;
-        height: 24px;
+        width: 24px !important;
+        height: 24px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     body {

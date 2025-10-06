@@ -95,6 +95,70 @@
     color: var(--white);
 }
 
+/* ===== EDUCATION SECTION ===== */
+.education-item {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-yellow);
+}
+
+.education-item h4 {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+}
+
+.education-details {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ===== EXPERIENCE SECTION ===== */
+.experience-item {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-blue);
+    transition: transform var(--transition-fast);
+}
+
+.experience-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.experience-item h4 {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.2rem;
+}
+
+.job-title {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.job-duration {
+    color: #666;
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.experience-item ul {
+    margin-left: var(--spacing-md);
+}
+
+.experience-item li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.5;
+}
+
 /* ===== RESUME HEADER ===== */
 .resume-header {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
@@ -418,6 +482,24 @@
         font-size: 1.1rem;
     }
     
+    /* Mobile education and experience */
+    .education-item,
+    .experience-item {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .experience-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .job-title {
+        font-size: 0.9rem;
+    }
+    
+    .job-duration {
+        font-size: 0.8rem;
+    }
     
     body {
         font-size: 12pt;

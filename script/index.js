@@ -33,40 +33,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== MOBILE NAVIGATION =====
     const menuBtn = document.getElementById('menu-icon');
-    const closeMenu = document.getElementById('menu-close');
     const nav = document.getElementById('nav');
     const header = document.getElementById('header');
     const author = document.getElementById('author');
+    let isMenuOpen = false;
 
     // Check if elements exist before adding event listeners
-    if (menuBtn && closeMenu && nav && header && author) {
-        // Open mobile menu
+    if (menuBtn && nav && header && author) {
+        // Toggle mobile menu
         menuBtn.addEventListener('click', function() {
-            nav.style.display = 'flex';
-            menuBtn.style.display = 'none';
-            header.style.background = 'white';
-            author.style.display = 'inline';
-        });
-
-        // Close mobile menu
-        closeMenu.addEventListener('click', function() {
-            nav.style.display = 'none';
-            menuBtn.style.display = 'block';
-            header.style.background = 'transparent';
-            author.style.display = 'none';
+            if (!isMenuOpen) {
+                // Open menu
+                nav.style.display = 'flex';
+                menuBtn.src = 'images/icon-close-menu.svg';
+                menuBtn.alt = 'Close';
+                header.style.background = 'white';
+                author.style.display = 'inline';
+                isMenuOpen = true;
+            } else {
+                // Close menu
+                nav.style.display = 'none';
+                menuBtn.src = 'images/iconmonstr-menu-lined-32.png';
+                menuBtn.alt = 'Menu';
+                header.style.background = 'transparent';
+                author.style.display = 'none';
+                isMenuOpen = false;
+            }
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!nav.contains(e.target) && !menuBtn.contains(e.target) && nav.style.display === 'flex') {
-                closeMenu.click();
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target) && isMenuOpen) {
+                menuBtn.click();
             }
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && nav.style.display === 'flex') {
-                closeMenu.click();
+            if (e.key === 'Escape' && isMenuOpen) {
+                menuBtn.click();
             }
         });
     }

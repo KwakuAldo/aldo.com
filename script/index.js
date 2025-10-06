@@ -60,6 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Social icons loading
+    const socialIcons = document.querySelectorAll('.socialIcons');
+    socialIcons.forEach((icon, index) => {
+        icon.addEventListener('error', function() {
+            console.log(`Social icon ${index + 1} failed to load:`, this.src);
+        });
+        icon.addEventListener('load', function() {
+            console.log(`Social icon ${index + 1} loaded successfully:`, this.src);
+        });
+    });
+
     // ===== MOBILE NAVIGATION =====
     const menuBtn = document.getElementById('menu-icon');
     const nav = document.getElementById('nav');

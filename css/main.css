@@ -1030,6 +1030,24 @@ main {
 		height: auto !important;
 	}
 
+	/* Mobile social icons fixes */
+	.hero-icons {
+		display: flex !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		width: 100% !important;
+		justify-content: center !important;
+		gap: 1rem !important;
+	}
+
+	.socialIcons {
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		width: 2rem !important;
+		height: 2rem !important;
+	}
+
 	.nav {
 		display: none;
 		flex-direction: column;
@@ -1160,6 +1178,15 @@ main {
 
 	.socialIcons {
 		width: 1.5rem;
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+
+	.hero-icons {
+		display: flex !important;
+		visibility: visible !important;
+		opacity: 1 !important;
 	}
 
 	.skills-container {

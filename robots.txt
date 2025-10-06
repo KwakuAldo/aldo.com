@@ -7,6 +7,16 @@ Sitemap: https://aldo.com/sitemap.xml
 # Crawl-delay
 Crawl-delay: 1
 
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
 # Disallow specific paths (if any)
 # Disallow: /admin/
 # Disallow: /private/

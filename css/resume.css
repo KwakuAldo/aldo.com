@@ -13,7 +13,6 @@
 .phone-number {
     cursor: pointer;
     color: var(--primary-yellow);
-    text-decoration: underline;
     transition: color var(--transition-fast);
 }
 
@@ -72,6 +71,12 @@
 
 .phone-icon {
     font-size: 1.2rem;
+}
+
+.phone-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 .phone-close {
@@ -414,6 +419,11 @@
     .phone-option {
         padding: var(--spacing-md);
         font-size: 1.1rem;
+    }
+    
+    .phone-icon-img {
+        width: 24px;
+        height: 24px;
     }
     
     body {

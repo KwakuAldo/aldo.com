@@ -756,8 +756,6 @@ main {
 /* ===== GITHUB STATS SECTION ===== */
 #github-stats {
 	min-height: 400px; /* Ensure section has minimum height */
-	background: #f0f8ff; /* Temporary background to see if section is visible */
-	border: 2px solid #007bff; /* Temporary border to see section boundaries */
 }
 
 .github-stats-container {

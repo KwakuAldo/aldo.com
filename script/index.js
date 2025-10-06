@@ -114,37 +114,39 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeText, 2000);
     }
 
-    // ===== GITHUB WIDGETS DEBUGGING =====
-    const githubStatsSection = document.getElementById('github-stats');
-    const githubStatsContainer = document.querySelector('.github-stats-container');
+    // ===== GITHUB WIDGETS =====
     const githubStatsImgs = document.querySelectorAll('.github-stats-img, .github-activity-img');
-    
-    console.log('GitHub stats section found:', !!githubStatsSection);
-    console.log('GitHub stats container found:', !!githubStatsContainer);
-    console.log('GitHub stats images found:', githubStatsImgs.length);
     
     if (githubStatsImgs.length > 0) {
         githubStatsImgs.forEach((img, index) => {
+            // Set initial state - show fallback, hide image
+            const fallback = img.parentNode.querySelector('.github-widget-fallback');
+            if (fallback) {
+                fallback.style.display = 'block';
+            }
+            img.style.display = 'none';
+            
             img.addEventListener('load', function() {
                 console.log(`GitHub widget ${index + 1} loaded successfully`);
-                // Hide fallback content when image loads
-                const fallback = img.parentNode.querySelector('.github-widget-fallback');
+                // Show image, hide fallback when image loads
+                img.style.display = 'block';
                 if (fallback) {
                     fallback.style.display = 'none';
                 }
             });
+            
             img.addEventListener('error', function() {
                 console.log(`GitHub widget ${index + 1} failed to load`);
-                // Show fallback content when image fails
-                const fallback = img.parentNode.querySelector('.github-widget-fallback');
+                // Keep fallback visible, keep image hidden
+                img.style.display = 'none';
                 if (fallback) {
                     fallback.style.display = 'block';
-                    img.style.display = 'none';
                 }
             });
+            
+            // Force load the image
+            img.src = img.src;
         });
-    } else {
-        console.log('No GitHub stats images found - this might be the issue');
     }
 
     // ===== PHONE POPUP MENU =====

@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (menuBtn) {
             // Always apply debugging styles for now
             menuBtn.style.display = 'block';
-            menuBtn.style.background = 'red';
-            menuBtn.style.border = '2px solid yellow';
+            menuBtn.style.background = 'transparent'; // Changed from red to transparent
+            menuBtn.style.border = '2px solid red'; // Changed to red border
             menuBtn.style.zIndex = '9999';
             menuBtn.style.padding = '1.25rem 0 0 1.25rem';
             menuBtn.style.width = '32px';
@@ -35,6 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.color = 'white';
                 this.innerHTML = '☰';
             };
+            
+            // Add success handler for image loading
+            menuBtn.onload = function() {
+                console.log('Image loaded successfully!');
+            };
+            
+            // Check if image is already loaded
+            if (menuBtn.complete) {
+                console.log('Image already loaded');
+            } else {
+                console.log('Image not yet loaded, waiting...');
+            }
             
             // Force reload the image
             const originalSrc = menuBtn.src;

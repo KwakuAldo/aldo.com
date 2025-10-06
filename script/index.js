@@ -10,50 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Force mobile styles if on mobile
     function applyMobileStyles() {
-        const menuBtn = document.getElementById('menu-icon');
-        if (menuBtn) {
-            // Always apply debugging styles for now
-            menuBtn.style.display = 'block';
-            menuBtn.style.background = 'transparent'; // Changed from red to transparent
-            menuBtn.style.border = '2px solid red'; // Changed to red border
-            menuBtn.style.zIndex = '9999';
-            menuBtn.style.padding = '1.25rem 0 0 1.25rem';
-            menuBtn.style.width = '32px';
-            menuBtn.style.height = '32px';
-            menuBtn.style.position = 'relative';
-            menuBtn.style.visibility = 'visible';
-            menuBtn.style.opacity = '1';
-            
-            console.log('Menu button found:', menuBtn);
-            console.log('Menu button src:', menuBtn.src);
-            console.log('Menu button computed style:', window.getComputedStyle(menuBtn).display);
-            
-            // Add error handling for image loading
-            menuBtn.onerror = function() {
-                console.log('Image failed to load, using fallback');
-                this.style.background = 'blue';
-                this.style.color = 'white';
-                this.innerHTML = '☰';
-            };
-            
-            // Add success handler for image loading
-            menuBtn.onload = function() {
-                console.log('Image loaded successfully!');
-            };
-            
-            // Check if image is already loaded
-            if (menuBtn.complete) {
-                console.log('Image already loaded');
-            } else {
-                console.log('Image not yet loaded, waiting...');
+        if (isMobile()) {
+            const menuBtn = document.getElementById('menu-icon');
+            if (menuBtn) {
+                // Apply proper mobile styles
+                menuBtn.style.display = 'block';
+                menuBtn.style.padding = '1.25rem 0 0 1.25rem';
+                menuBtn.style.width = '32px';
+                menuBtn.style.height = '32px';
+                menuBtn.style.position = 'relative';
+                menuBtn.style.visibility = 'visible';
+                menuBtn.style.opacity = '1';
+                menuBtn.style.zIndex = '9999';
             }
-            
-            // Force reload the image
-            const originalSrc = menuBtn.src;
-            menuBtn.src = '';
-            menuBtn.src = originalSrc;
-        } else {
-            console.log('Menu button NOT found!');
         }
     }
     

@@ -127,14 +127,20 @@ document.addEventListener('DOMContentLoaded', function() {
         githubStatsImgs.forEach((img, index) => {
             img.addEventListener('load', function() {
                 console.log(`GitHub widget ${index + 1} loaded successfully`);
+                // Hide fallback content when image loads
+                const fallback = img.parentNode.querySelector('.github-widget-fallback');
+                if (fallback) {
+                    fallback.style.display = 'none';
+                }
             });
             img.addEventListener('error', function() {
                 console.log(`GitHub widget ${index + 1} failed to load`);
-                // Add fallback content
-                const fallback = document.createElement('div');
-                fallback.style.cssText = 'padding: 20px; text-align: center; background: #f8f9fa; border-radius: 10px; color: #666;';
-                fallback.innerHTML = `<p>GitHub widget temporarily unavailable</p><p><a href="https://github.com/KwakuAldo" target="_blank">View GitHub Profile</a></p>`;
-                img.parentNode.replaceChild(fallback, img);
+                // Show fallback content when image fails
+                const fallback = img.parentNode.querySelector('.github-widget-fallback');
+                if (fallback) {
+                    fallback.style.display = 'block';
+                    img.style.display = 'none';
+                }
             });
         });
     } else {

@@ -440,6 +440,7 @@ main {
 	background-color: var(--primary-yellow);
 	color: var(--primary-dark);
 	border: 2px solid var(--primary-dark);
+	font-family: var(--font-family);
 }
 
 .btn-primary:hover {
@@ -452,6 +453,7 @@ main {
 	background-color: var(--primary-dark);
 	color: var(--primary-blue);
 	border: 2px solid var(--primary-dark);
+	font-family: var(--font-family);
 }
 
 .btn-secondary:hover {
@@ -464,6 +466,7 @@ main {
 	background-color: var(--primary-dark);
 	color: var(--white);
 	border: 2px solid var(--white);
+	font-family: var(--font-family);
 }
 
 .btn-outline:hover {
@@ -489,6 +492,7 @@ main {
 	border: 2px solid var(--primary-yellow);
 	color: var(--primary-yellow);
 	background-color: rgba(249, 200, 70, 0.1);
+	font-family: var(--font-family);
 	font-size: 1em;
 	line-height: 1;
 	border-radius: 20px;

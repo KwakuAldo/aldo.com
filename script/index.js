@@ -10,15 +10,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Force mobile styles if on mobile
     function applyMobileStyles() {
-        if (isMobile()) {
-            const menuBtn = document.getElementById('menu-icon');
-            if (menuBtn) {
-                menuBtn.style.display = 'block';
-                menuBtn.style.background = 'red';
-                menuBtn.style.border = '2px solid yellow';
-                menuBtn.style.zIndex = '9999';
-                menuBtn.style.padding = '1.25rem 0 0 1.25rem';
-            }
+        const menuBtn = document.getElementById('menu-icon');
+        if (menuBtn) {
+            // Always apply debugging styles for now
+            menuBtn.style.display = 'block';
+            menuBtn.style.background = 'red';
+            menuBtn.style.border = '2px solid yellow';
+            menuBtn.style.zIndex = '9999';
+            menuBtn.style.padding = '1.25rem 0 0 1.25rem';
+            menuBtn.style.width = '32px';
+            menuBtn.style.height = '32px';
+            menuBtn.style.position = 'relative';
+            menuBtn.style.visibility = 'visible';
+            menuBtn.style.opacity = '1';
+            
+            console.log('Menu button found:', menuBtn);
+            console.log('Menu button src:', menuBtn.src);
+            console.log('Menu button computed style:', window.getComputedStyle(menuBtn).display);
+            
+            // Add error handling for image loading
+            menuBtn.onerror = function() {
+                console.log('Image failed to load, using fallback');
+                this.style.background = 'blue';
+                this.style.color = 'white';
+                this.innerHTML = '☰';
+            };
+            
+            // Force reload the image
+            const originalSrc = menuBtn.src;
+            menuBtn.src = '';
+            menuBtn.src = originalSrc;
+        } else {
+            console.log('Menu button NOT found!');
         }
     }
     

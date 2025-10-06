@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== INITIALIZE ALL OPTIMIZATIONS =====
-    preloadCriticalResources();
+    // preloadCriticalResources(); // Disabled to prevent console errors
     optimizeImages();
     debounceScrollEvents();
     optimizeAnimations();

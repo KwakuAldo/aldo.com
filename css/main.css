@@ -1472,6 +1472,11 @@ img[loading="lazy"].loaded {
     opacity: 1;
 }
 
+/* Exempt side image from lazy loading opacity rule */
+.side-image img {
+    opacity: 1 !important;
+}
+
 /* Navigation icons should always be visible */
 img[data-critical] {
     opacity: 1 !important;

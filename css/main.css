@@ -991,7 +991,11 @@ main {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media screen and (max-width: 768px) {
+/* Mobile detection - multiple approaches for better compatibility */
+@media screen and (max-width: 768px),
+       screen and (max-device-width: 768px),
+       screen and (max-width: 768px) and (orientation: portrait),
+       screen and (max-width: 768px) and (orientation: landscape) {
 	body {
 		width: 100%;
 	}

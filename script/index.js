@@ -2,6 +2,33 @@
 // Enhanced functionality with better error handling and accessibility
 
 document.addEventListener('DOMContentLoaded', function() {
+    // ===== MOBILE DETECTION AND FORCE STYLES =====
+    function isMobile() {
+        return window.innerWidth <= 768 || 
+               /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    
+    // Force mobile styles if on mobile
+    function applyMobileStyles() {
+        if (isMobile()) {
+            const menuBtn = document.getElementById('menu-icon');
+            if (menuBtn) {
+                menuBtn.style.display = 'block';
+                menuBtn.style.background = 'red';
+                menuBtn.style.border = '2px solid yellow';
+                menuBtn.style.zIndex = '9999';
+                menuBtn.style.padding = '1.25rem 0 0 1.25rem';
+            }
+        }
+    }
+    
+    // Apply on load
+    applyMobileStyles();
+    
+    // Apply on resize/orientation change
+    window.addEventListener('resize', applyMobileStyles);
+    window.addEventListener('orientationchange', applyMobileStyles);
+
     // ===== MOBILE NAVIGATION =====
     const menuBtn = document.getElementById('menu-icon');
     const closeMenu = document.getElementById('menu-close');

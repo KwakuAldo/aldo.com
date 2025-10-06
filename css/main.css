@@ -846,32 +846,6 @@ main {
 	margin: 0;
 }
 
-/* ===== CONTACT PHONE SECTION ===== */
-.contact-phone-section {
-    text-align: center;
-    margin: var(--spacing-lg) 0;
-    padding: var(--spacing-md);
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
-    border-radius: 15px;
-    color: var(--white);
-}
-
-.contact-phone-section h3 {
-    color: var(--white);
-    margin-bottom: 0;
-    font-size: 1.5rem;
-}
-
-.contact-phone-section .phone-number {
-    cursor: pointer;
-    color: var(--primary-yellow);
-    transition: color var(--transition-fast);
-    text-decoration: underline;
-}
-
-.contact-phone-section .phone-number:hover {
-    color: var(--white);
-}
 
 /* ===== CONTACT FORM ===== */
 .contact-form-section {
@@ -1297,15 +1271,6 @@ main {
 		max-width: 100%;
 	}
 	
-	/* Mobile contact phone section */
-	.contact-phone-section {
-		margin: var(--spacing-md) 0;
-		padding: var(--spacing-sm);
-	}
-	
-	.contact-phone-section h3 {
-		font-size: 1.3rem;
-	}
 
 	/* Theme toggle mobile positioning */
 	.theme-toggle {

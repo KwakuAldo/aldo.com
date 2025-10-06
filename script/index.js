@@ -116,38 +116,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== PHONE POPUP MENU =====
     const phoneNumber = document.getElementById('phone-number');
+    const contactMeBtn = document.getElementById('contact-me-btn');
     const phonePopup = document.getElementById('phone-popup');
     const phoneClose = document.getElementById('phone-close');
     
-    if (phoneNumber && phonePopup && phoneClose) {
-        // Open phone popup
-        phoneNumber.addEventListener('click', function() {
+    // Function to open phone popup
+    function openPhonePopup() {
+        if (phonePopup) {
             phonePopup.style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        });
-        
-        // Close phone popup
-        phoneClose.addEventListener('click', function() {
+        }
+    }
+    
+    // Function to close phone popup
+    function closePhonePopup() {
+        if (phonePopup) {
             phonePopup.style.display = 'none';
             document.body.style.overflow = 'auto'; // Restore scrolling
-        });
-        
-        // Close popup when clicking outside
+        }
+    }
+    
+    // Open phone popup from phone number (resume page)
+    if (phoneNumber) {
+        phoneNumber.addEventListener('click', openPhonePopup);
+    }
+    
+    // Open phone popup from Contact Me button (home page)
+    if (contactMeBtn) {
+        contactMeBtn.addEventListener('click', openPhonePopup);
+    }
+    
+    // Close phone popup
+    if (phoneClose) {
+        phoneClose.addEventListener('click', closePhonePopup);
+    }
+    
+    // Close popup when clicking outside
+    if (phonePopup) {
         phonePopup.addEventListener('click', function(e) {
             if (e.target === phonePopup) {
-                phonePopup.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Close popup with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && phonePopup.style.display === 'flex') {
-                phonePopup.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                closePhonePopup();
             }
         });
     }
+    
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && phonePopup && phonePopup.style.display === 'flex') {
+            closePhonePopup();
+        }
+    });
 
     // ===== MOBILE NAVIGATION =====
     const menuBtn = document.getElementById('menu-icon');

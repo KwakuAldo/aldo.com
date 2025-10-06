@@ -114,6 +114,41 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeText, 2000);
     }
 
+    // ===== PHONE POPUP MENU =====
+    const phoneNumber = document.getElementById('phone-number');
+    const phonePopup = document.getElementById('phone-popup');
+    const phoneClose = document.getElementById('phone-close');
+    
+    if (phoneNumber && phonePopup && phoneClose) {
+        // Open phone popup
+        phoneNumber.addEventListener('click', function() {
+            phonePopup.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+        
+        // Close phone popup
+        phoneClose.addEventListener('click', function() {
+            phonePopup.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+        
+        // Close popup when clicking outside
+        phonePopup.addEventListener('click', function(e) {
+            if (e.target === phonePopup) {
+                phonePopup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && phonePopup.style.display === 'flex') {
+                phonePopup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
     // ===== MOBILE NAVIGATION =====
     const menuBtn = document.getElementById('menu-icon');
     const nav = document.getElementById('nav');

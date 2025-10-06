@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', applyMobileStyles);
     window.addEventListener('orientationchange', applyMobileStyles);
 
-    // ===== HERO IMAGE LOADING =====
+    // ===== IMAGE LOADING =====
+    // Hero image loading
     const heroImg = document.getElementById('hero_img');
     if (heroImg) {
         // Add error handling for hero image with fallback
@@ -41,6 +42,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.src = 'images/hero_2.jpg';
             } else if (this.src.includes('hero_2.jpg')) {
                 this.src = 'images/aldo22.jpg';
+            }
+        });
+    }
+
+    // Profile image loading (for resume page)
+    const profileImg = document.querySelector('.profile-img');
+    if (profileImg) {
+        // Add error handling for profile image with fallback
+        profileImg.addEventListener('error', function() {
+            // Try alternative image
+            if (this.src.includes('aldo22.jpg')) {
+                this.src = 'images/hero_3.jpg';
+            } else if (this.src.includes('hero_3.jpg')) {
+                this.src = 'images/hero_2.jpg';
             }
         });
     }

@@ -119,16 +119,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (githubStatsImgs.length > 0) {
         githubStatsImgs.forEach((img, index) => {
-            // Set initial state - show fallback, hide image
             const fallback = img.parentNode.querySelector('.github-widget-fallback');
+            
+            // Set initial state - show image, hide fallback
+            img.style.display = 'block';
             if (fallback) {
-                fallback.style.display = 'block';
+                fallback.style.display = 'none';
             }
-            img.style.display = 'none';
             
             img.addEventListener('load', function() {
                 console.log(`GitHub widget ${index + 1} loaded successfully`);
-                // Show image, hide fallback when image loads
+                // Ensure image is visible and fallback is hidden
                 img.style.display = 'block';
                 if (fallback) {
                     fallback.style.display = 'none';
@@ -137,15 +138,23 @@ document.addEventListener('DOMContentLoaded', function() {
             
             img.addEventListener('error', function() {
                 console.log(`GitHub widget ${index + 1} failed to load`);
-                // Keep fallback visible, keep image hidden
+                // Show fallback, hide image on error
                 img.style.display = 'none';
                 if (fallback) {
                     fallback.style.display = 'block';
                 }
             });
             
-            // Force load the image
-            img.src = img.src;
+            // Add a timeout to show fallback if image doesn't load within 10 seconds
+            setTimeout(() => {
+                if (img.complete && img.naturalHeight === 0) {
+                    console.log(`GitHub widget ${index + 1} timeout - showing fallback`);
+                    img.style.display = 'none';
+                    if (fallback) {
+                        fallback.style.display = 'block';
+                    }
+                }
+            }, 10000);
         });
     }
 

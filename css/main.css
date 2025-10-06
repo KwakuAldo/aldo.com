@@ -276,12 +276,15 @@ main {
 
 .side-image {
 	flex: 0 0 300px;
+	opacity: 1;
 }
 
 .side-image img {
 	width: 100%;
 	border-radius: 10px;
 	transition: transform var(--transition-fast);
+	opacity: 1;
+	display: block;
 }
 
 .side-image img:hover {

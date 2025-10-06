@@ -73,8 +73,6 @@ body {
 .menu-icon {
 	display: none;
 	cursor: pointer;
-	width: 32px;
-	height: 32px;
 }
 
 .menu-icon:hover {

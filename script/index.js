@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Apply proper mobile styles
                 menuBtn.style.display = 'block';
                 menuBtn.style.padding = '1.25rem 0 0 1.25rem';
-                menuBtn.style.width = '32px';
-                menuBtn.style.height = '32px';
                 menuBtn.style.position = 'relative';
                 menuBtn.style.visibility = 'visible';
                 menuBtn.style.opacity = '1';

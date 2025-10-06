@@ -1011,8 +1011,11 @@ main {
 	}
 
 	.menu-icon {
-		display: block;
+		display: block !important;
 		padding: 1.25rem 0 0 1.25rem;
+		background: red !important;
+		border: 2px solid yellow !important;
+		z-index: 9999 !important;
 	}
 
 	.nav {

@@ -754,11 +754,16 @@ main {
 }
 
 /* ===== GITHUB STATS SECTION ===== */
+#github-stats {
+	min-height: 400px; /* Ensure section has minimum height */
+}
+
 .github-stats-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: var(--spacing-lg);
+	padding: var(--spacing-lg) 0;
 }
 
 .github-stats-grid {

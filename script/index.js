@@ -114,6 +114,33 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeText, 2000);
     }
 
+    // ===== GITHUB WIDGETS DEBUGGING =====
+    const githubStatsSection = document.getElementById('github-stats');
+    const githubStatsContainer = document.querySelector('.github-stats-container');
+    const githubStatsImgs = document.querySelectorAll('.github-stats-img, .github-activity-img');
+    
+    console.log('GitHub stats section found:', !!githubStatsSection);
+    console.log('GitHub stats container found:', !!githubStatsContainer);
+    console.log('GitHub stats images found:', githubStatsImgs.length);
+    
+    if (githubStatsImgs.length > 0) {
+        githubStatsImgs.forEach((img, index) => {
+            img.addEventListener('load', function() {
+                console.log(`GitHub widget ${index + 1} loaded successfully`);
+            });
+            img.addEventListener('error', function() {
+                console.log(`GitHub widget ${index + 1} failed to load`);
+                // Add fallback content
+                const fallback = document.createElement('div');
+                fallback.style.cssText = 'padding: 20px; text-align: center; background: #f8f9fa; border-radius: 10px; color: #666;';
+                fallback.innerHTML = `<p>GitHub widget temporarily unavailable</p><p><a href="https://github.com/KwakuAldo" target="_blank">View GitHub Profile</a></p>`;
+                img.parentNode.replaceChild(fallback, img);
+            });
+        });
+    } else {
+        console.log('No GitHub stats images found - this might be the issue');
+    }
+
     // ===== PHONE POPUP MENU =====
     const phoneNumber = document.getElementById('phone-number');
     const contactMeBtn = document.getElementById('contact-me-btn');

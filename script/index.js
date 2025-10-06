@@ -37,12 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add error handling for hero image
         heroImg.addEventListener('error', function() {
             console.log('Hero image failed to load, trying fallback...');
-            // Try to reload the image
-            const originalSrc = this.src;
-            this.src = '';
-            setTimeout(() => {
-                this.src = originalSrc + '?t=' + Date.now(); // Add cache buster
-            }, 100);
+            // Try alternative image
+            if (this.src.includes('hero_3.jpg')) {
+                this.src = 'images/hero_2.jpg';
+            } else if (this.src.includes('hero_2.jpg')) {
+                this.src = 'images/aldo22.jpg';
+            } else {
+                // Try to reload the original image with cache buster
+                const originalSrc = this.src.split('?')[0];
+                this.src = originalSrc + '?t=' + Date.now();
+            }
         });
         
         // Check if image loads within 3 seconds

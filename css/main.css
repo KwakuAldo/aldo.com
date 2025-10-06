@@ -189,6 +189,9 @@ main {
 	object-fit: cover;
 	border-radius: 50%;
 	transition: transform var(--transition-fast);
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 #hero_img:hover {
@@ -1016,6 +1019,15 @@ main {
 		display: block !important;
 		padding: 1.25rem 0 0 1.25rem;
 		z-index: 9999 !important;
+	}
+
+	/* Mobile hero image fixes */
+	#hero_img {
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		max-width: 200px !important;
+		height: auto !important;
 	}
 
 	.nav {

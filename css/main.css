@@ -1107,8 +1107,17 @@ main {
 
 .goals-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: var(--spacing-md);
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Limit goals grid to maximum 3 columns on large screens */
+@media screen and (min-width: 1200px) {
+	.goals-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 .goal-item {

@@ -212,6 +212,38 @@
 	<script src="script/performance.js"></script>
 	
 	<script>
+		// Mobile menu functionality (minimal, non-breaking)
+		document.addEventListener('DOMContentLoaded', function() {
+			const menuIcon = document.getElementById('menu-icon');
+			const nav = document.getElementById('nav');
+			let isMenuOpen = false;
+			
+			if (menuIcon && nav) {
+				menuIcon.addEventListener('click', function() {
+					if (!isMenuOpen) {
+						// Open menu
+						nav.style.display = 'flex';
+						menuIcon.src = 'images/icon-close-menu.svg';
+						menuIcon.alt = 'Close';
+						isMenuOpen = true;
+					} else {
+						// Close menu
+						nav.style.display = 'none';
+						menuIcon.src = 'images/iconmonstr-menu-lined-32.png';
+						menuIcon.alt = 'Menu';
+						isMenuOpen = false;
+					}
+				});
+				
+				// Close menu when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!nav.contains(e.target) && !menuIcon.contains(e.target) && isMenuOpen) {
+						menuIcon.click();
+					}
+				});
+			}
+		});
+		
 		// Responsive accessibility image switching
 		function updateAccessibilityImage() {
 			const accessibilityImg = document.querySelector('.accessibility-image');

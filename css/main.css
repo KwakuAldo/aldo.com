@@ -50,7 +50,7 @@ body {
 	font-size: var(--font-size-base);
 	scroll-behavior: smooth;
 	position: relative;
-	color: var(--white);
+	color: var(--text-primary);
 	font-family: var(--font-family);
 	line-height: 1.6;
 }
@@ -1425,39 +1425,7 @@ main {
 		font-size: 1.3rem;
 	}
 
-	/* ===== BLOG STYLES ===== */
-	.blog-hero-content {
-		text-align: center;
-		padding: var(--spacing-xl) 0;
-	}
 
-	.blog-hero-content h1 {
-		font-size: 3rem;
-		margin-bottom: var(--spacing-md);
-		color: var(--primary-yellow);
-	}
-
-	.blog-hero-content p {
-		font-size: 1.3rem;
-		color: var(--white);
-		opacity: 0.9;
-	}
-
-	/* Blog Posts */
-	.blog-post {
-		background: rgba(255, 255, 255, 0.05);
-		border-radius: 15px;
-		padding: var(--spacing-lg);
-		margin-bottom: var(--spacing-xl);
-		backdrop-filter: blur(10px);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-	}
-
-	.blog-post:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-	}
 
 	.blog-post-header {
 		margin-bottom: var(--spacing-md);

@@ -336,6 +336,17 @@ main {
 	display: block;
 }
 
+/* Responsive accessibility image */
+.accessibility-image {
+	content: url('images/accessibilty_large.png');
+}
+
+@media screen and (max-width: 768px) {
+	.accessibility-image {
+		content: url('images/accessibilty_small.png');
+	}
+}
+
 .code-snippet-placeholder:hover {
 	border-color: #f9c846;
 	background: #fff;

@@ -1525,11 +1525,20 @@ main {
 	.blog-post-body ul {
 		margin: var(--spacing-md) 0;
 		padding-left: var(--spacing-lg);
+		list-style-type: disc;
+		list-style-position: outside;
+	}
+
+	.blog-post-body ul li::marker {
+		color: var(--primary-yellow);
+		font-size: 1.2em;
 	}
 
 	.blog-post-body li {
 		margin-bottom: var(--spacing-xs);
 		font-size: 1.1rem;
+		color: var(--white);
+		line-height: 1.6;
 	}
 
 	.blog-post-body strong {

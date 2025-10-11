@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Aldo Efui Adabunu - Blog | Frontend Developer & System Administrator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Read about Aldo Efui Adabunu's development journey, projects, and insights on frontend development and system administration.">
+	<meta name="keywords" content="Aldo Efui Adabunu, blog, frontend development, web development, system administration, programming, projects">
+	<meta name="author" content="Aldo Efui Adabunu">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#120E26">
+	
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Aldo Efui Adabunu - Blog">
+	<meta property="og:description" content="Read about Aldo's development journey, projects, and insights on frontend development and system administration.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://dotaldokwaku.netlify.app/blog.html">
+	<meta property="og:image" content="https://dotaldokwaku.netlify.app/images/aldo22.jpg">
+	<meta property="og:site_name" content="Aldo Efui Adabunu Portfolio">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+	<header class="header" id="header">
+		<img class="menu-icon" src="images/iconmonstr-menu-lined-32.png" alt="Menu" id="menu-icon">
+		<!-- Navigation -->
+		<nav class="nav" id="nav">
+			<div class="nav-items">
+				<a href="index.html" class="hvr-float">Home</a>
+				<a href="resume.html" class="hvr-float">Resume</a>
+				<a href="works.html" class="hvr-float">My Works</a>
+				<a href="blog.html" class="hvr-float active">Blog</a>
+				<a href="index.html#contact" class="hvr-float">Contact Me</a>
+			</div>
+		</nav>
+		<div class="author">
+			<a id="author" href="index.html" class="text-flicker-in-glow">Aldo Efui Adabunu</a>
+		</div>
+	</header>
+
+	<main>
+		<!-- SEO Hidden Heading -->
+		<h1 style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">Aldo Efui Adabunu - Blog Posts about Frontend Development and System Administration</h1>
+		
+		<section class="container">
+			<section id="blog-hero" class="subSection1">
+				<div class="blog-hero-content">
+					<h1 class="focus-in-contract-bck tracking-in-expand">My Development Blog</h1>
+					<p class="kkbk typing-text">Sharing my journey, projects, and insights in frontend development</p>
+				</div>
+			</section>
+
+			<section id="blog-posts" class="subSection">
+				<h2 class="h2hf">Latest Posts</h2>
+				
+				<!-- Blog Post 1: To Do App -->
+				<article class="blog-post">
+					<div class="blog-post-header">
+						<h3 class="blog-post-title">To Do App</h3>
+						<div class="blog-post-meta">
+							<span class="blog-post-date">December 2024</span>
+							<span class="blog-post-category">Frontend Development</span>
+						</div>
+					</div>
+					
+					<div class="blog-post-content">
+						<div class="blog-post-excerpt">
+							<p>Hello, I am Aldo, an intermediate JavaScript developer, and this is my first blog post! I started my web development journey sometime around April 2020, and recently embarked on a journey to build a To Do application from scratch. After going through the fundamentals of JS, I wanted to test my skills by building a light weight project to test my skills, it was a comprehensive learning experience that took me through modern web development practices. In this post, I will share my complete development process, the challenges I faced, and the lessons I learned along the way.</p>
+						</div>
+						
+						<div class="blog-post-body">
+							<h4>Project Overview</h4>
+							<p><strong>App Name:</strong> To Do App</p>
+							<p><strong>Tech Stack:</strong> HTML5, CSS3, Vanilla JavaScript, Netlify</p>
+							<p><strong>Features:</strong> Task management, local storage, form validation, responsive design</p>
+							<p><strong>Live Site:</strong> <a href="https://todoappbyaldo.netlify.app" target="_blank" rel="noopener noreferrer">todoappbyaldo.netlify.app</a></p>
+							<p><strong>Github repo:</strong> <a href="https://github.com/KwakuAldo" target="_blank" rel="noopener noreferrer">https://github.com/KwakuAldo</a></p>
+							
+							<h4>HTML Structure and Accessibility</h4>
+							<p>So I started of with a simple semantic, accessible HTML structure. I implemented several accessibility best practices:</p>
+							<ul>
+								<li>ARIA Labels for screen readers</li>
+								<li>Semantic HTML elements</li>
+								<li>Proper form labeling with 'for' and 'id' attributes</li>
+								<li>Keyboard navigation support</li>
+								<li>Responsive design for all screen sizes</li>
+							</ul>
+							<p>Building with accessibility in mind is much better and easier than retrofitting it later, it also improves the overall user experience for everyone.</p>
+							
+							<div class="code-snippet-placeholder">
+								<p><em>[Insert images of code snippets]</em></p>
+							</div>
+							
+							<h4>Adding Functionality with JavaScript</h4>
+							<p>Next I wanted to add some functionality before styling. The app needed to work at the bare bones before anything else. So a step by step approach:</p>
+							<ul>
+								<li>Fetch values from the input</li>
+								<li>Function to add task to a list</li>
+								<li>Function to display task</li>
+								<li>Functions to edit, delete, save, and mark as complete</li>
+								<li>Create an array to handle the task list</li>
+								<li>Data persistence with local storage</li>
+							</ul>
+							
+							<h4>Implementing Local Storage</h4>
+							<p>I also learned how to use the browser's local storage to persist data.</p>
+							
+							<div class="code-snippet-placeholder">
+								<p><em>[Insert image of local storage code]</em></p>
+							</div>
+							
+							<p>One thing I also learned while implementing local storage is to always wrap local storage operations in try-catch blocks. Users can disable local storage or run out of space, and your app should handle these scenarios gracefully.</p>
+							
+							<h4>Form Validation</h4>
+							<p>I had to implement some form validation so that the inputs were not recording empty values, past dates and characters not going over certain limits. Good validation provides clear, helpful error messages and prevents users from making mistakes, it is better to guide users than to frustrate them.</p>
+							
+							<h4>Deployment</h4>
+							<p>Deploying to Netlify taught me about production considerations:</p>
+							<ul>
+								<li>File structure issues, initially, my CSS and JS files weren't loading because they were in the src directory, but Netlify serves from public</li>
+								<li>I had to update all the file paths to work in production. I achieved this by creating a netlify.toml file for proper deployment settings</li>
+							</ul>
+							<p>My biggest take away from this project was that what works locally doesn't always work in production. Always test your deployed application and be prepared to debug.</p>
+							
+							<h4>Core Features and Functionality</h4>
+							<ul>
+								<li>Task creation with title, description, due date/time, time and task priority</li>
+								<li>Task management (edit, delete, save, mark complete)</li>
+								<li>Bulk operations (mark all complete, delete all, and delete completed)</li>
+								<li>Form validation with error messages</li>
+								<li>Live counters for tasks and completed tasks</li>
+								<li>Data persistence with local storage</li>
+								<li>Accessibility features throughout</li>
+							</ul>
+							
+							<h4>Technical Achievements</h4>
+							<ul>
+								<li>Semantic HTML5</li>
+								<li>Vanilla JavaScript</li>
+								<li>Error handling</li>
+								<li>Cross browser compatibility</li>
+							</ul>
+							
+							<h4>Development Workflow</h4>
+							<ul>
+								<li>File organization and project structure</li>
+								<li>Development vs production builds</li>
+								<li>Console debugging and testing</li>
+								<li>Step by step feature development</li>
+							</ul>
+							
+							<h4>Future Improvements</h4>
+							<p>While this version is fully functional, I would love to add some new features in the future:</p>
+							<ul>
+								<li>Search and filter function</li>
+								<li>Due date and time reminders</li>
+								<li>Dark mode toggle</li>
+								<li>PWA features for offline functionality</li>
+							</ul>
+							
+							<h4>Conclusion</h4>
+							<p>Building this app was an incredible learning experience that improved my understanding of JavaScript and modern web practices. Most importantly, it showed me that building a professional quality application is achievable with dedication, proper planning and step by step problem solving. The key is to start with a solid foundation and build incrementally, testing and refining along the way.</p>
+							
+							<p>This project has given me back confidence in my abilities as a developer especially since I haven't been consistent with my learning in recent times. I am excited to continue building and learning, applying these lessons to even more complex applications.</p>
+							
+							<p>Thanks for making it this far! I'd love to hear about your projects and the lessons you've learned along the way. Connect with me on <a href="https://twitter.com/TheGrand_Rascal" target="_blank" rel="noopener noreferrer">Twitter</a>, <a href="https://github.com/KwakuAldo" target="_blank" rel="noopener noreferrer">GitHub</a> or visit my <a href="https://dotaldokwaku.netlify.app" target="_blank" rel="noopener noreferrer">portfolio</a> to see more of my work.</p>
+						</div>
+						
+						<div class="blog-post-footer">
+							<div class="blog-post-tags">
+								<span class="tag">JavaScript</span>
+								<span class="tag">HTML5</span>
+								<span class="tag">CSS3</span>
+								<span class="tag">Local Storage</span>
+								<span class="tag">Accessibility</span>
+								<span class="tag">Netlify</span>
+								<span class="tag">Form Validation</span>
+								<span class="tag">Responsive Design</span>
+							</div>
+						</div>
+					</div>
+				</article>
+				
+				<!-- Placeholder for future blog posts -->
+				<div class="blog-placeholder">
+					<h3>More Posts Coming Soon!</h3>
+					<p>I'm working on more blog posts about my development journey, system administration insights, and project walkthroughs. Stay tuned for updates!</p>
+				</div>
+			</section>
+		</section>
+	</main>
+	
+	<script src="script/index.js"></script>
+	<script src="script/performance.js"></script>
+</body>
+</html>

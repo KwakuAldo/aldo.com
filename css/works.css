@@ -242,8 +242,8 @@ main {
 }
 
 #repos-btn {
-	background-color: var(--primary-dark);
-	color: var(--white);
+	background-color: var(--white);
+	color: var(--primary-dark);
 	border-color: var(--primary-dark);
 }
 

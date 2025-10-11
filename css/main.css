@@ -1524,22 +1524,30 @@ main {
 
 	.blog-post-body ul {
 		margin: var(--spacing-md) 0;
-		padding-left: var(--spacing-lg);
-		list-style-type: disc;
-		list-style-position: outside;
+		padding-left: 0 !important;
+		list-style: none !important;
+		display: block;
 	}
 
-	.blog-post-body ul li::marker {
-		color: var(--primary-yellow);
-		font-size: 1.2em;
-	}
-
-	.blog-post-body li {
+	.blog-post-body ul li {
+		position: relative;
+		padding-left: 1.5rem;
 		margin-bottom: var(--spacing-xs);
 		font-size: 1.1rem;
 		color: var(--white);
 		line-height: 1.6;
 	}
+
+	.blog-post-body ul li::before {
+		content: "•";
+		color: var(--primary-yellow);
+		font-size: 1.2em;
+		font-weight: bold;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
 
 	.blog-post-body strong {
 		color: var(--primary-yellow);
@@ -1643,9 +1651,6 @@ main {
 		font-size: 1rem;
 	}
 
-	.blog-post-body li {
-		font-size: 1rem;
-	}
 
 	.blog-post-tags {
 		justify-content: center;

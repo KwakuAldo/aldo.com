@@ -212,25 +212,35 @@
 	<script src="script/performance.js"></script>
 	
 	<script>
-		// Mobile menu functionality (minimal, non-breaking)
+		// Mobile menu functionality (Home page style)
 		document.addEventListener('DOMContentLoaded', function() {
 			const menuIcon = document.getElementById('menu-icon');
 			const nav = document.getElementById('nav');
+			const header = document.getElementById('header');
+			const author = document.querySelector('.author');
 			let isMenuOpen = false;
 			
-			if (menuIcon && nav) {
+			if (menuIcon && nav && header) {
 				menuIcon.addEventListener('click', function() {
 					if (!isMenuOpen) {
 						// Open menu
 						nav.style.display = 'flex';
 						menuIcon.src = 'images/icon-close-menu.svg';
 						menuIcon.alt = 'Close';
+						header.classList.add('menu-open');
+						if (author) {
+							author.style.display = 'inline';
+						}
 						isMenuOpen = true;
 					} else {
 						// Close menu
 						nav.style.display = 'none';
 						menuIcon.src = 'images/iconmonstr-menu-lined-32.png';
 						menuIcon.alt = 'Menu';
+						header.classList.remove('menu-open');
+						if (author) {
+							author.style.display = 'none';
+						}
 						isMenuOpen = false;
 					}
 				});

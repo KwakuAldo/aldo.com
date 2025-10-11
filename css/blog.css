@@ -336,15 +336,14 @@ main {
 	display: block;
 }
 
-/* Responsive accessibility image */
+/* Responsive accessibility image - will be handled by JavaScript */
 .accessibility-image {
-	content: url('images/accessibilty_large.png');
-}
-
-@media screen and (max-width: 768px) {
-	.accessibility-image {
-		content: url('images/accessibilty_small.png');
-	}
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	margin: 1rem 0;
+	display: block;
 }
 
 .code-snippet-placeholder:hover {

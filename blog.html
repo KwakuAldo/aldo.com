@@ -97,7 +97,7 @@
 							<p>Building with accessibility in mind is much better and easier than retrofitting it later, it also improves the overall user experience for everyone.</p>
 							
 							<div class="code-snippet-placeholder">
-								<img src="images/accessibilty_large.png" alt="HTML accessibility code snippet showing ARIA labels and semantic elements" class="accessibility-image">
+								<img src="images/accessibilty_large.png" alt="HTML accessibility code snippet showing ARIA labels and semantic elements" class="accessibility-image" data-large="images/accessibilty_large.png" data-small="images/accessibilty_small.png">
 							</div>
 							
 							<h4>Adding Functionality with JavaScript</h4>
@@ -205,5 +205,29 @@
 	
 	<script src="script/index.js"></script>
 	<script src="script/performance.js"></script>
+	
+	<script>
+		// Responsive accessibility image switching
+		function updateAccessibilityImage() {
+			const accessibilityImg = document.querySelector('.accessibility-image');
+			if (accessibilityImg) {
+				const isMobile = window.innerWidth <= 768;
+				const imageSrc = isMobile ? 
+					accessibilityImg.getAttribute('data-small') : 
+					accessibilityImg.getAttribute('data-large');
+				accessibilityImg.src = imageSrc;
+			}
+		}
+		
+		// Run on page load
+		document.addEventListener('DOMContentLoaded', updateAccessibilityImage);
+		
+		// Run on window resize with debouncing
+		let resizeTimeout;
+		window.addEventListener('resize', function() {
+			clearTimeout(resizeTimeout);
+			resizeTimeout = setTimeout(updateAccessibilityImage, 100);
+		});
+	</script>
 </body>
 </html>

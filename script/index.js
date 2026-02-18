@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== TYPING ANIMATION =====
     const typingText = document.getElementById('typing-text');
     const texts = [
-        'Frontend Developer / System Administrator',
+        'Devops Cloud Engineer / Frontend Developer',
         'Problem Solver / Creative Thinker',
         'Always Learning / Always Growing',
         'Building Amazing Web Experiences',

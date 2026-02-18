@@ -255,31 +255,31 @@
     gap: var(--spacing-lg);
 }
 
-.skill-group {
+.expertise-group {
     background: #f8f9fa;
     padding: var(--spacing-md);
     border-radius: 8px;
     border-left: 4px solid var(--primary-yellow);
 }
 
-.skill-group h4 {
+.expertise-group h4 {
     color: var(--primary-dark);
     margin-bottom: var(--spacing-sm);
     font-size: 1.1rem;
 }
 
-.skill-group ul {
+.expertise-group ul {
     list-style: none;
     padding: 0;
 }
 
-.skill-group li {
+.expertise-group li {
     padding: var(--spacing-xs) 0;
     position: relative;
     padding-left: var(--spacing-md);
 }
 
-.skill-group li::before {
+.expertise-group li::before {
     content: "▶";
     color: var(--primary-yellow);
     position: absolute;

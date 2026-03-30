@@ -45,7 +45,7 @@
 			</div>
 		</nav>
 		<div class="author">
-			<a id="author" href="index.html" class="text-flicker-in-glow">Aldo Efui Adabunu</a>
+			<a id="author" href="index.html">Aldo Efui Adabunu</a>
 		</div>
 	</header>
 
@@ -53,8 +53,8 @@
 		<section class="container">
 			<section id="blog-hero" class="subSection1" aria-labelledby="blog-title">
 				<div class="blog-hero-content">
-					<h1 id="blog-title" class="focus-in-contract-bck tracking-in-expand">Cloud, DevOps & Development Notes</h1>
-					<p class="kkbk typing-text">Project write-ups, deployment lessons, and progress toward junior cloud and DevOps roles</p>
+					<h1 id="blog-title">Cloud, DevOps & Development Notes</h1>
+					<p class="kkbk">Project write-ups, deployment lessons, and progress toward junior cloud and DevOps roles</p>
 				</div>
 			</section>
 
@@ -224,34 +224,32 @@
 			let isMenuOpen = false;
 			
 			if (menuIcon && nav && header) {
-				menuIcon.addEventListener('click', function() {
-					if (!isMenuOpen) {
-						// Open menu
-						nav.style.display = 'flex';
-						menuIcon.src = 'images/icon-close-menu.svg';
-						menuIcon.alt = 'Close';
-						header.classList.add('menu-open');
-						if (author) {
-							author.style.display = 'inline';
-						}
-						isMenuOpen = true;
-					} else {
-						// Close menu
-						nav.style.display = 'none';
-						menuIcon.src = 'images/iconmonstr-menu-lined-32.png';
-						menuIcon.alt = 'Menu';
-						header.classList.remove('menu-open');
-						if (author) {
-							author.style.display = 'none';
-						}
-						isMenuOpen = false;
+				function setMenuState(open) {
+					nav.style.display = open ? 'flex' : 'none';
+					document.body.classList.toggle('menu-active', open);
+					menuIcon.src = open ? 'images/icon-close-menu.svg' : 'images/iconmonstr-menu-lined-32.png';
+					menuIcon.alt = open ? 'Close' : 'Menu';
+					header.classList.toggle('menu-open', open);
+					if (author) {
+						author.style.display = open ? 'inline' : 'none';
 					}
+					isMenuOpen = open;
+				}
+
+				menuIcon.addEventListener('click', function() {
+					setMenuState(!isMenuOpen);
 				});
 				
 				// Close menu when clicking outside
 				document.addEventListener('click', function(e) {
 					if (!nav.contains(e.target) && !menuIcon.contains(e.target) && isMenuOpen) {
-						menuIcon.click();
+						setMenuState(false);
+					}
+				});
+
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape' && isMenuOpen) {
+						setMenuState(false);
 					}
 				});
 			}

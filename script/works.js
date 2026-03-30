@@ -11,32 +11,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if elements exist before adding event listeners
     if (menuBtn && closeMenu && nav && header && author) {
+        const isWorksPage = document.body.classList.contains('works-page');
+        function setMenuState(open) {
+            nav.style.display = open ? 'flex' : 'none';
+            menuBtn.style.display = open ? 'none' : 'block';
+            header.style.background = isWorksPage ? 'rgba(8, 16, 31, 0.92)' : (open ? 'white' : 'transparent');
+            author.style.display = open ? 'inline' : 'none';
+            document.body.classList.toggle('menu-active', open);
+            nav.setAttribute('aria-expanded', open ? 'true' : 'false');
+            menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
         // Open mobile menu
         menuBtn.addEventListener('click', function() {
-            nav.style.display = 'flex';
-            menuBtn.style.display = 'none';
-            header.style.background = 'white';
-            author.style.display = 'inline';
-            
-            // Add ARIA attributes for accessibility
-            nav.setAttribute('aria-expanded', 'true');
-            menuBtn.setAttribute('aria-expanded', 'true');
-            
+            setMenuState(true);
             // Focus management
             closeMenu.focus();
         });
 
         // Close mobile menu
         closeMenu.addEventListener('click', function() {
-            nav.style.display = 'none';
-            menuBtn.style.display = 'block';
-            header.style.background = 'transparent';
-            author.style.display = 'none';
-            
-            // Remove ARIA attributes
-            nav.setAttribute('aria-expanded', 'false');
-            menuBtn.setAttribute('aria-expanded', 'false');
-            
+            setMenuState(false);
             // Focus management
             menuBtn.focus();
         });
@@ -59,14 +54,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target) && nav.style.display === 'flex') {
-                closeMenu.click();
+                setMenuState(false);
             }
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && nav.style.display === 'flex') {
-                closeMenu.click();
+                setMenuState(false);
             }
         });
     }
@@ -82,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = 'none';
+            this.style.transform = '';
+            this.style.boxShadow = '';
         });
 
         // Add click tracking for analytics (optional)

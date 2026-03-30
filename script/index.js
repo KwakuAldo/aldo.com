@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (menuBtn) {
                 // Apply proper mobile styles
                 menuBtn.style.display = 'block';
-                menuBtn.style.padding = '1.25rem 0 0 1.25rem';
                 menuBtn.style.position = 'relative';
                 menuBtn.style.visibility = 'visible';
                 menuBtn.style.opacity = '1';
@@ -220,38 +219,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if elements exist before adding event listeners
     if (menuBtn && nav && header && author) {
+        const isHomePage = document.body.classList.contains('home-page');
+        function setMenuState(open) {
+            nav.style.display = open ? 'flex' : 'none';
+            document.body.classList.toggle('menu-active', open);
+            menuBtn.src = open ? 'images/icon-close-menu.svg' : 'images/iconmonstr-menu-lined-32.png';
+            menuBtn.alt = open ? 'Close' : 'Menu';
+            header.style.background = isHomePage ? 'rgba(8, 16, 31, 0.92)' : (open ? 'white' : 'transparent');
+            author.style.display = open ? 'inline' : 'none';
+            isMenuOpen = open;
+        }
+
         // Toggle mobile menu
         menuBtn.addEventListener('click', function() {
-            if (!isMenuOpen) {
-                // Open menu
-                nav.style.display = 'flex';
-                menuBtn.src = 'images/icon-close-menu.svg';
-                menuBtn.alt = 'Close';
-                header.style.background = 'white';
-                author.style.display = 'inline';
-                isMenuOpen = true;
-            } else {
-                // Close menu
-                nav.style.display = 'none';
-                menuBtn.src = 'images/iconmonstr-menu-lined-32.png';
-                menuBtn.alt = 'Menu';
-                header.style.background = 'transparent';
-                author.style.display = 'none';
-                isMenuOpen = false;
-            }
+            setMenuState(!isMenuOpen);
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target) && isMenuOpen) {
-                menuBtn.click();
+                setMenuState(false);
             }
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && isMenuOpen) {
-                menuBtn.click();
+                setMenuState(false);
             }
         });
     }
@@ -259,9 +253,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== PROJECT SLIDESHOW =====
     const mq = window.matchMedia("(max-width: 768px)");
     
-    if (mq.matches) {
+    const projectGrid = document.querySelector('.projectGrid');
+
+    if (mq.matches && projectGrid) {
         let slideIndex = 1;
-        const slides = document.getElementsByClassName('projectIMGs');
+        const slides = projectGrid.getElementsByClassName('projectIMGs');
         
         // Initialize slideshow
         if (slides.length > 0) {

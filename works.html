@@ -28,13 +28,13 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/works.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-<body>
+<body class="works-page">
     <header class="header" id="header">
         <img class="menu-icon" src="images/iconmonstr-menu-lined-32.png" alt="Open navigation menu" id="menu-icon" role="button" tabindex="0" aria-label="Open navigation menu">
         <!-- Navigation -->
@@ -48,16 +48,31 @@
             </div>
         </nav>
         <div class="author">
-            <a id="author" href="#" class="text-flicker-in-glow">Aldo Efui Adabunu</a>
+            <a id="author" href="index.html">Aldo Efui Adabunu</a>
         </div>
     </header>
 
     <!--Featured works-->
     <main>
-        <section class="container" aria-labelledby="myProjects">
-            <header class="subSection">
+        <section class="container" id="works" aria-labelledby="myProjects">
+            <header class="subSection works-hero">
+                <p class="section-label">Project Portfolio</p>
                 <h1 id="myProjects" class="h2hf">Projects</h1>
-                <p class="kkbk">Selected work that shows my progress toward junior cloud, DevOps, and systems-focused roles, alongside frontend foundations.</p>
+                <p class="kkbk">A focused view of the work that best reflects my transition into junior cloud, DevOps, systems support, and infrastructure-focused roles.</p>
+                <div class="works-summary-grid">
+                    <div class="summary-card">
+                        <span class="summary-label">Best fit</span>
+                        <p>Projects that show deployment thinking, container workflows, and practical technical growth.</p>
+                    </div>
+                    <div class="summary-card">
+                        <span class="summary-label">Supporting background</span>
+                        <p>Frontend projects that strengthen implementation, debugging, and UI delivery skills.</p>
+                    </div>
+                    <div class="summary-card">
+                        <span class="summary-label">Current tools</span>
+                        <p>Docker, GitHub Actions, Docker Hub, Linux, Azure CLI, Nginx, SSH, and Git workflows.</p>
+                    </div>
+                </div>
             </header>
             <div class="project-container">
                 <article class="work-cards">
@@ -65,12 +80,17 @@
                         <img class="projectIMGs" src="images/Screenshot from 2024-06-28 18-46-23.png" alt="Screenshot of Netflix Clone project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Frontend Foundation</p>
                         <h3>Netflix Clone</h3>
                         <p class="projects-p">
-                            <strong>Full-stack Netflix clone</strong> built as final project for Slightly Techie Cohort 4. 
-                            <strong>Technologies:</strong> HTML5, CSS3, JavaScript, responsive design, user authentication, movie browsing functionality.
-                            <strong>Key Features:</strong> Responsive design, user registration/login, movie search and filtering, dynamic content loading.
+                            Streaming-style web project built during Slightly Techie Cohort 4. Used to strengthen responsive layout, interface structure, and JavaScript-based interaction work.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Responsive Design</span>
+                        </div>
                         <a href="https://capstoneprojectcohort2.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -80,11 +100,17 @@
                         <img class="projectIMGs" src="images/desktop-design.jpg" alt="Screenshot of Age Calculator App project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Cloud / DevOps Practice</p>
                         <h3>Age Calculator App</h3>
                         <p class="projects-p">
-                            A frontend age calculator app containerized with Docker and automated with a GitHub Actions CI/CD pipeline that builds
-                            and pushes versioned Docker images to Docker Hub.
+                            Frontend application used to practice Docker-based delivery. Built hands-on experience with multi-stage builds, image tagging, GitHub Actions CI/CD, Docker Hub publishing, and Nginx-based container serving.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">Docker Hub</span>
+                            <span class="skill-tag">Nginx</span>
+                        </div>
                         <a href="https://agecalcuapp.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -94,10 +120,16 @@
                         <img class="projectIMGs" src="images/Screenshot from 2024-06-28 18-55-22.png" alt="Screenshot of Intro Section with Dropdown Navigation project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Frontend Build</p>
                         <h3>Intro Section With Dropdown Navigation</h3>
                         <p class="projects-p">
-                            A responsive navigation component with dropdown menus. Built using HTML5, CSS3, and JavaScript as part of my self-development journey.
+                            Responsive navigation interface built with HTML, CSS, and JavaScript. Good example of interaction design, layout control, and attention to responsive behavior.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
                         <a href="https://stalwart-chimera-4e580d.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -107,10 +139,16 @@
                         <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-55-42 Developer Portfolio.png" alt="Screenshot of Developer Portfolio project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Portfolio Build</p>
                         <h3>Developer Portfolio</h3>
                         <p class="projects-p">
-                            A personal portfolio website created using HTML5, CSS3, and JavaScript. This was a part of my self-development journey and showcases my early work.
+                            Earlier personal portfolio build created with HTML, CSS, and JavaScript as part of my frontend learning path.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
                         <a href="https://dpsf.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -120,10 +158,16 @@
                         <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-53-20 Frontend Mentor Clipboard landing page.png" alt="Screenshot of Frontend Mentor Clipboard landing page project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Frontend Mentor</p>
                         <h3>Frontend Mentor Clipboard Landing Page</h3>
                         <p class="projects-p">
-                            A landing page created for Frontend Mentor challenge. Features modern design, responsive layout, and clean code structure.
+                            Landing page implementation built to practice responsive layout, spacing, and semantic page structure.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Responsive Design</span>
+                        </div>
                         <a href="https://clpm.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -133,10 +177,16 @@
                         <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 15-59-14 Frontend Mentor Manage landing page.png" alt="Screenshot of Frontend Mentor Manage landing page project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Frontend Mentor</p>
                         <h3>Frontend Mentor Manage Landing Page</h3>
                         <p class="projects-p">
-                            A landing page created for Frontend Mentor challenge. Demonstrates advanced CSS techniques and responsive design principles.
+                            Landing page build used to strengthen CSS layout techniques and responsive implementation.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Layout</span>
+                        </div>
                         <a href="https://mlpm.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -146,10 +196,16 @@
                         <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-00-05 Frontend Mentor Challenge Name Here.png" alt="Screenshot of Frontend Mentor Challenge project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Frontend Mentor</p>
                         <h3>Frontend Mentor Challenge</h3>
                         <p class="projects-p">
-                            A landing page created for Frontend Mentor challenge. Showcases my ability to implement designs from scratch using modern web technologies.
+                            Design implementation project completed to improve markup, styling, and UI-building consistency.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">UI Build</span>
+                        </div>
                         <a href="https://tgsm.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -159,10 +215,16 @@
                         <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-01-13 Basketball Scoreboard.png" alt="Screenshot of Basketball Scoreboard project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Frontend Exercise</p>
                         <h3>Basketball Scoreboard</h3>
                         <p class="projects-p">
-                            A simple basketball scoreboard created using HTML5 and CSS3. Features interactive scoring and responsive design for mobile devices.
+                            Simple interface project focused on layout, interaction, and lightweight JavaScript behavior.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
                         <a href="https://steady-syrniki-6306a1.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -172,10 +234,16 @@
                         <img class="projectIMGs" src="images/Screenshot 2022-12-07 at 16-12-08 PipBoy.png" alt="Screenshot of PipBoy project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Creative UI</p>
                         <h3>PipBoy Interface</h3>
                         <p class="projects-p">
-                            A PipBoy-inspired interface created using HTML5 and CSS3. Features retro styling and interactive elements inspired by the Fallout game series.
+                            Creative interface build inspired by the Fallout PipBoy style, used to practice visual design and CSS styling control.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">UI Styling</span>
+                        </div>
                         <a href="https://aesthetic-cactus-4a9259.netlify.app/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
@@ -185,20 +253,24 @@
                         <img class="projectIMGs" src="images/OSC FrontEndMentor.jpeg" alt="Screenshot of OSC FrontEnd Mentor project" loading="lazy">
                     </div>
                     <div class="info-card">
+                        <p class="project-kicker">Early Project</p>
                         <h3>OSC FrontEnd Mentor</h3>
                         <p class="projects-p">
-                            A responsive HTML5 and CSS3 website built from Front End Mentor design. This project represents my early days of learning web development.
+                            Early responsive build from a Frontend Mentor design that shows where my web development practice started.
                         </p>
+                        <div class="project-tag-row">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Responsive Design</span>
+                        </div>
                         <a href="https://osc-frontendmentor.github.io/oscar-browser-extension/" target="_blank" rel="noopener noreferrer" class="live-site">View Site</a>
                     </div>
                 </article>
-                
-                <button onclick="fwdSlides(-1)" class="rwd" aria-label="Previous project">&#10094;</button>
-                <button onclick="fwdSlides(1)" class="fwd" aria-label="Next project">&#10095;</button>
             </div>
             
             <div class="buttons" id="project-btn">
-                <a class="btn hvr-bob" href="https://github.com/KwakuAldo?tab=repositories" id="repos-btn" target="_blank" rel="noopener noreferrer">View GitHub Repositories</a>
+                <a class="btn" href="resume.html">View Resume</a>
+                <a class="btn btn-secondary" href="https://github.com/KwakuAldo?tab=repositories" id="repos-btn" target="_blank" rel="noopener noreferrer">View GitHub Repositories</a>
             </div>
         </section>
 
